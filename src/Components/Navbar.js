@@ -1,17 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <NavbarStyle>
       <h1>ARTIFY</h1>
       <div>
         <ul>
-          <li>HOME</li>
+          <StyledLink to="/">
+            <li>HOME</li>
+          </StyledLink>
           <li>EXPLORE</li>
           <li>CONTACT</li>
-          <li>REGISTER</li>
-          <li>LOGIN</li>
+          <StyledLink to="/register">
+            <li>REGISTER</li>
+          </StyledLink>
+          <StyledLink to="/login">
+            <li>LOGIN</li>
+          </StyledLink>
         </ul>
       </div>
     </NavbarStyle>
@@ -26,18 +32,13 @@ const NavbarStyle = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  /* z-index: 10;
-  position: sticky;
-  top: 0; */
 
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     margin: 30px;
     letter-spacing: 0.5rem;
-    @media (max-width: 1568px) {
-      font-size: 2rem;
-    }
+    cursor: pointer;
   }
 
   div {
@@ -52,7 +53,7 @@ const NavbarStyle = styled.div`
   }
 
   li {
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     margin: 0 3rem;
 
@@ -62,13 +63,37 @@ const NavbarStyle = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1280px) {
     h1 {
       font-size: 3rem;
     }
 
     li {
-      font-size: 1.5rem;
+      font-size: 1rem;
+      margin: 0 1rem;
     }
+  }
+  @media (max-width: 800px) {
+    h1 {
+      font-size: 0.9rem;
+      margin: 0px 0px 0px 30px;
+    }
+
+    li {
+      font-size: 0.7rem;
+      margin: 0 0.5rem;
+    }
+  }
+`;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+    color: white;
   }
 `;

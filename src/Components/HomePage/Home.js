@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Lottie from "lottie-react";
-import HomeSVG from "../img/Svg/Home.json";
+import HomeSVG from "../../img/Svg/Home.json";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillRocketTakeoffFill } from "react-icons/bs";
 
@@ -63,6 +63,7 @@ const Headers = styled.div`
   span {
     background: linear-gradient(to right, #c18bdc, #e56333);
     -webkit-background-clip: text;
+    background-clip: inset 0 0 6px rgba(0, 0, 0, 0.1);
     color: transparent;
   }
 
@@ -77,6 +78,16 @@ const Headers = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
+  }
+  @media (max-width: 1280px) {
+    h1 {
+      font-size: 4rem;
+    }
+    h3 {
+      font-size: 0.8rem;
+      font-weight: 400;
+      margin: 0 0 1rem 0;
+    }
   }
 `;
 
@@ -104,6 +115,11 @@ const JoinUsButton = styled.button`
   span {
     color: white;
     scale: 2rem;
+  }
+  @media (max-width: 1280px) {
+    width: 5 rem;
+    padding: 1rem;
+    font-size: 0.6rem;
   }
 `;
 

@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import NFT from "./NFT";
 
-import nft13 from "../img/Nft/Nft13.jpg";
-import nft15 from "../img/Nft/Nft15.jpg";
-import nft17 from "../img/Nft/Nft17.jpg";
+import nft13 from "../../img/Nft/Nft13.jpg";
+import nft15 from "../../img/Nft/Nft15.jpg";
+import nft17 from "../../img/Nft/Nft17.jpg";
 
-import OwnerOne from "../img/creators/model1.jpg";
-import OwnerTwo from "../img/creators/model2.jpg";
-import OwnerThree from "../img/creators/model3.jpg";
+import OwnerOne from "../../img/creators/model1.jpg";
+import OwnerTwo from "../../img/creators/model2.jpg";
+import OwnerThree from "../../img/creators/model3.jpg";
 
 function PopularNFT() {
   return (
@@ -54,6 +54,10 @@ const PopularNFTStyle = styled.div`
   margin-top: 5rem;
   text-align: center;
   color: white;
+  @media (max-width: 1280px) {
+    margin-bottom: 5rem;
+    height: auto;
+  }
 `;
 
 const Heading = styled.div`
@@ -74,5 +78,8 @@ const PopularNFTContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  @media (max-width: 1280px) {
+    flex-direction: column;
+  }
 `;
 export default PopularNFT;

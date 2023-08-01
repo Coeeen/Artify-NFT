@@ -1,17 +1,19 @@
 import "./App.css";
-import Navbar from "./Components/Navbar";
-import Home from "./Components/Home";
-import WeAssure from "./Components/WeAssure";
-import PopularNFT from "./Components/PopularNFT";
-import HallOfFame from "./Components/HallOfFame";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+
+import MainPage from "./MainPage";
+import LoginMainPage from "./LoginMainPage";
+import RegisterMainPage from "./RegisterMainPage";
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Home />
-      <WeAssure />
-      <PopularNFT />
-      <HallOfFame />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainPage />}></Route>
+          <Route path="/login" element={<LoginMainPage />}></Route>
+          <Route path="/register" element={<RegisterMainPage />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

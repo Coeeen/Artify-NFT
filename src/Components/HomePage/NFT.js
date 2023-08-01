@@ -27,7 +27,7 @@ function NFT({ img, name, ownerName, ownerPicture, price, NumberLicked }) {
         </DetailInfo>
         <button>BUY IT</button>
       </OwnerInfo>
-      <Line />
+      <Line>&zwnj; </Line>
       <BottomCard>
         <h1>{price}</h1>
         <button onClick={() => ToggleLicked()}>
@@ -47,7 +47,7 @@ const NFTStyle = styled.div`
   padding: 25px;
   display: flex;
   flex-direction: column;
-
+  margin: 10px;
   h2 {
     font-size: 1rem;
     font-weight: 400;
@@ -103,6 +103,7 @@ const Line = styled.div`
   width: 100%;
   background-color: #181839;
   height: 5px;
+  margin: 10px 0px;
 `;
 
 const BottomCard = styled.div`
@@ -110,6 +111,10 @@ const BottomCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  h1 {
+    font-size: 2rem;
+  }
   button {
     background-color: #181839;
     border: none;
@@ -123,6 +128,7 @@ const BottomCard = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin: 10px;
     svg {
       transform: scale(1.5);
     }

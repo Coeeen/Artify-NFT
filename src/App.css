@@ -6,3 +6,17 @@ body {
   background-color: #141420;
   font-family: "Outfit";
 }
+::-webkit-scrollbar {
+  height: 12px;
+  width: 6px;
+  background: #141420;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d0d15;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+::-webkit-scrollbar-corner {
+  background: #141420;
+}
