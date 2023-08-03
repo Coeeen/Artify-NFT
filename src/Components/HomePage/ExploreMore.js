@@ -20,7 +20,7 @@ function ExploreMore() {
             ownerName={data.ownerName}
             ownerPicture={data.ownerPicture}
             price={data.price}
-            NumberLicked={data.numberLikes}
+            numberLicked={data.numberLikes}
             specialStyle={index >= 4 && index <= 7}
             key={index}
           ></NFT>
@@ -30,10 +30,7 @@ function ExploreMore() {
         <div>
           <Link to="explore">
             <button>SEARCH FOR MORE</button>
-            <Lottie
-              animationData={ExploreMoreLottie}
-              isClickToPauseDisabled
-            ></Lottie>
+            <Lottie animationData={ExploreMoreLottie}></Lottie>
           </Link>
         </div>
       </SearchForMoreStyle>

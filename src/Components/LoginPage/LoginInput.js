@@ -17,7 +17,7 @@ function LoginInput() {
         <input type="text" placeholder="Password"></input>
         <Links>
           <p>
-            <StyledLink to="/login">
+            <StyledLink to="/register">
               Not a member?
               <span style={{ color: "#F44956" }}>
                 <br /> Sign Up
@@ -48,7 +48,10 @@ const LoginInputStyle = styled.div`
     margin: 0;
     font-weight: bold;
     letter-spacing: 2px;
-    color: white;
+    background: linear-gradient(to right, #f44956, #8bbfdb);
+    -webkit-background-clip: text;
+    background-clip: inset 0 0 10px rgba(0, 0, 0, 1);
+    color: transparent;
     text-align: center;
   }
   h2 {

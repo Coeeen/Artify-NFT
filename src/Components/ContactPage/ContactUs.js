@@ -82,11 +82,12 @@ const HeaderStyle = styled.div`
     margin: 0;
     font-weight: bold;
     letter-spacing: 2px;
-    background: linear-gradient(to right, #6a67b7, #e56333);
+    background: linear-gradient(to right, #c18bdc, #e56333);
     -webkit-background-clip: text;
     background-clip: inset 0 0 6px rgba(0, 0, 0, 0.1);
     color: transparent;
     text-align: center;
+    margin-top: 2rem;
   }
   h2 {
     font-size: 1rem;
@@ -170,7 +171,7 @@ const ContactInfo = styled.div`
   input[type="text"],
   textarea {
     background-color: #141420;
-    width: 50%;
+    width: 60%;
     padding: 12px 20px;
     margin: 20px 10px;
     box-sizing: border-box;
@@ -185,7 +186,7 @@ const ContactInfo = styled.div`
     }
   }
   button {
-    width: 10rem;
+    width: 12rem;
     color: white;
     border-radius: 20px;
     margin-top: 1rem;

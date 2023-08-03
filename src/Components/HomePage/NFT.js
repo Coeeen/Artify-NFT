@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
-function NFT({ img, name, ownerName, ownerPicture, price, NumberLicked }) {
+function NFT({ img, name, ownerName, ownerPicture, price, numberLicked }) {
   const [Liked, setLiked] = useState(false);
-  const [NumberOfLike, setNumberOfLike] = useState(NumberLicked);
+  const [NumberOfLike, setNumberOfLike] = useState(numberLicked);
   function ToggleLicked() {
     if (Liked) {
       setLiked(false);
@@ -75,7 +75,7 @@ const OwnerInfo = styled.div`
     background-color: #553396;
     color: white;
     cursor: pointer;
-    width: 6rem;
+    width: 7rem;
     font-family: "Outfit";
     font-weight: 400;
     border-radius: 20px;
@@ -91,6 +91,7 @@ const DetailInfo = styled.div`
     margin: 0;
     color: white;
     font-weight: 400;
+    font-size: 1rem;
   }
   h4 {
     margin: 0px 0px 10px 0px;
@@ -114,6 +115,7 @@ const BottomCard = styled.div`
 
   h1 {
     font-size: 2rem;
+    color: white;
   }
   button {
     background-color: #181839;

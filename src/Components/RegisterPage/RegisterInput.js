@@ -53,7 +53,10 @@ const LoginInputStyle = styled.div`
     margin: 0;
     font-weight: bold;
     letter-spacing: 2px;
-    color: white;
+    background: linear-gradient(to right, #ff3d9d, #8bbfdb);
+    -webkit-background-clip: text;
+    background-clip: inset 0 0 10px rgba(0, 0, 0, 1);
+    color: transparent;
     text-align: center;
   }
   h2 {

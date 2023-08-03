@@ -24,7 +24,7 @@ function PopularNFT() {
           ownerName={"#PixelNinja"}
           ownerPicture={OwnerOne}
           price="4.99$"
-          NumberLicked={999}
+          numberLicked={999}
         />
         <NFT
           img={nft17}
@@ -32,7 +32,7 @@ function PopularNFT() {
           ownerName={"#TechnoGuru"}
           ownerPicture={OwnerTwo}
           price="4.99$"
-          NumberLicked={776}
+          numberLicked={776}
         />
         <NFT
           img={nft13}
@@ -40,7 +40,7 @@ function PopularNFT() {
           ownerName={"#GalacticJester"}
           ownerPicture={OwnerThree}
           price="4.99$"
-          NumberLicked={2136}
+          numberLicked={2136}
         />
       </PopularNFTContainer>
     </PopularNFTStyle>
