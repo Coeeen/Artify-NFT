@@ -10,8 +10,12 @@ function Navbar() {
           <StyledLink to="/">
             <li>HOME</li>
           </StyledLink>
-          <li>EXPLORE</li>
-          <li>CONTACT</li>
+          <StyledLink to="/explore">
+            <li>EXPLORE</li>
+          </StyledLink>
+          <StyledLink to="/contact">
+            <li>CONTACT</li>
+          </StyledLink>
           <StyledLink to="/register">
             <li>REGISTER</li>
           </StyledLink>

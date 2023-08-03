@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 import HomeSVG from "../../img/Svg/Home.json";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillRocketTakeoffFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -15,19 +16,23 @@ function Home() {
         </h1>
         <h3>Your Haven For Unique Digital Artwork</h3>
         <div>
-          <JoinUsButton>
-            <span>{<AiFillHome />} </span> JOIN US
-          </JoinUsButton>
-          <ExploreButton>
-            <span>
-              EXPLORE{"   "}
-              <span>{<BsFillRocketTakeoffFill />}</span>
-            </span>
-          </ExploreButton>
+          <Link to="register">
+            <JoinUsButton>
+              <span>{<AiFillHome />} </span> JOIN US
+            </JoinUsButton>
+          </Link>
+          <Link to="explore">
+            <ExploreButton>
+              <span>
+                EXPLORE{"   "}
+                <span>{<BsFillRocketTakeoffFill />}</span>
+              </span>
+            </ExploreButton>
+          </Link>
         </div>
       </Headers>
       <LottieStyle>
-        <Lottie loop={false} animationData={HomeSVG} />;
+        <Lottie animationData={HomeSVG} />;
       </LottieStyle>
     </MainHome>
   );

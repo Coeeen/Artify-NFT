@@ -1,6 +1,8 @@
 import React from "react";
 import Lottie from "lottie-react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import SignIn from "../../img/Svg/SignIn.json";
 function RegisterInput() {
   return (
@@ -15,8 +17,26 @@ function RegisterInput() {
         <InputContainer>
           <input type="text" placeholder="E-mail"></input>
           <input type="text" placeholder="Login"></input>
-          <input type="text" placeholder="Password"></input>
-          <input type="text" placeholder="Password"></input>
+          <div>
+            <input type="text" placeholder="Password"></input>
+            <p>
+              <StyledLink to="/login">
+                Already have an account?
+                <span style={{ color: "#F44956" }}>
+                  <br /> Click here
+                </span>
+              </StyledLink>
+            </p>
+          </div>
+          <div>
+            <input type="text" placeholder="Password"></input>
+            <p>
+              I've read and agree to
+              <span style={{ color: "#2E8DFD" }}>
+                <br /> Terms & Conditions
+              </span>
+            </p>
+          </div>
         </InputContainer>
         <button>CREATE ACCOUNT</button>
       </LottieStyle>
@@ -72,7 +92,7 @@ const LottieStyle = styled.div`
     background: #fff;
     box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.25);
     font-family: "Outfit";
-    padding: 1.5rem;
+    padding: 1.3rem;
     width: 10rem;
     margin: 1rem 0rem;
     cursor: pointer;
@@ -84,4 +104,22 @@ const InputContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   margin: 20px;
+
+  p {
+    margin: 5px 10px;
+    color: white;
+    cursor: pointer;
+  }
+`;
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+    color: white;
+  }
 `;

@@ -5,6 +5,7 @@ import Lottie from "lottie-react";
 import { ExploreMoreData } from "../Database";
 import ExploreMoreLottie from "../../img/Svg/ExploreMore.json";
 import NFT from "./NFT";
+import { Link } from "react-router-dom";
 
 function ExploreMore() {
   return (
@@ -27,11 +28,13 @@ function ExploreMore() {
       </ExploreMoreContainer>
       <SearchForMoreStyle>
         <div>
-          <button>SEARCH FOR MORE</button>
-          <Lottie
-            animationData={ExploreMoreLottie}
-            isClickToPauseDisabled
-          ></Lottie>
+          <Link to="explore">
+            <button>SEARCH FOR MORE</button>
+            <Lottie
+              animationData={ExploreMoreLottie}
+              isClickToPauseDisabled
+            ></Lottie>
+          </Link>
         </div>
       </SearchForMoreStyle>
     </ExploreMoreStyle>

@@ -2,7 +2,7 @@ import React from "react";
 import Lottie from "lottie-react";
 import styled from "styled-components";
 import LoginAnimation from "../../img/Svg/Login.json";
-
+import { StyledLink } from "../RegisterPage/RegisterInput";
 function LoginInput() {
   return (
     <LoginInputStyle>
@@ -15,6 +15,24 @@ function LoginInput() {
         ></Lottie>
         <input type="text" placeholder="E-mail"></input>
         <input type="text" placeholder="Password"></input>
+        <Links>
+          <p>
+            <StyledLink to="/login">
+              Not a member?
+              <span style={{ color: "#F44956" }}>
+                <br /> Sign Up
+              </span>
+            </StyledLink>
+          </p>
+          <p>
+            <StyledLink to="/login">
+              Forgot
+              <span style={{ color: "#507ded" }}>
+                <br></br> Password?
+              </span>
+            </StyledLink>
+          </p>
+        </Links>
         <button>LOG IN</button>
       </LottieStyle>
     </LoginInputStyle>
@@ -73,5 +91,17 @@ const LottieStyle = styled.div`
     width: 10rem;
     margin: 1rem 0rem;
     cursor: pointer;
+  }
+`;
+
+const Links = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25%;
+
+  @media (max-width: 780px) {
+    font-size: 0.7rem;
+    justify-content: space-around;
   }
 `;
