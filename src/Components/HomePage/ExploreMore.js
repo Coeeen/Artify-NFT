@@ -15,6 +15,7 @@ function ExploreMore() {
       <ExploreMoreContainer>
         {ExploreMoreData.map((data, index) => (
           <NFT
+            id={data.id}
             img={data.img}
             name={data.name}
             ownerName={data.ownerName}

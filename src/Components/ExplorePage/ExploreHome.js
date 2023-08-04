@@ -29,7 +29,7 @@ const ExploreHomeStyle = styled.div`
       max-width: 50%;
     }
     @media (max-width: 1280px) {
-      max-width: 50%;
+      max-width: 100%;
       font-size: 4rem;
     }
   }
@@ -42,8 +42,8 @@ const ExploreHomeStyle = styled.div`
   img {
     width: 100%;
     height: 45rem;
-    /* @media (max-width: 1280px) {
+    @media (max-width: 760px) {
       display: none;
-    } */
+    }
   }
 `;

@@ -16,6 +16,7 @@ function ExploreCollection() {
       <NFTContainer>
         {ExploreNFTColection.map((data) => (
           <NFT
+            id={data.id}
             img={data.img}
             ownerName={data.ownerName}
             ownerPicture={data.ownerPicture}
@@ -39,6 +40,10 @@ const Header = styled.div`
     letter-spacing: 2px;
     color: white;
     text-align: center;
+
+    @media (max-width: 760px) {
+      font-size: 2rem;
+    }
   }
   h2 {
     font-size: 1.5rem;
@@ -47,6 +52,9 @@ const Header = styled.div`
     color: white;
     text-align: center;
     margin: 0;
+  }
+  @media (max-width: 760px) {
+    margin-top: 30rem;
   }
 `;
 

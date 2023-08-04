@@ -25,7 +25,7 @@ function LoginInput() {
             </StyledLink>
           </p>
           <p>
-            <StyledLink to="/login">
+            <StyledLink to="/forgot">
               Forgot
               <span style={{ color: "#507ded" }}>
                 <br></br> Password?
@@ -44,7 +44,7 @@ export default LoginInput;
 const LoginInputStyle = styled.div`
   margin: 1rem;
   h1 {
-    font-size: 3rem;
+    font-size: 3.6rem;
     margin: 0;
     font-weight: bold;
     letter-spacing: 2px;
@@ -76,6 +76,7 @@ const LottieStyle = styled.div`
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
+    text-align: center;
     border-bottom: 2px solid white;
     background-color: 141420;
     color: white;

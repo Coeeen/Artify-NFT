@@ -6,10 +6,14 @@ import { BsGoogle } from "react-icons/bs";
 import { BsYoutube } from "react-icons/bs";
 
 function Footer() {
+  function ToTheTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <FooterStyle>
       <FooterSocials>
-        <h1>Artify</h1>
+        <h1 onClick={() => ToTheTop()}>Artify</h1>
         <div>
           <ul>
             <li>Account Options</li>
@@ -86,12 +90,13 @@ const FooterSocials = styled.div`
   h1 {
     color: #fff;
     font-family: Outfit;
-    font-size: 30px;
+    font-size: 2rem;
     font-style: normal;
-    font-weight: 600;
+    font-weight: bold;
     line-height: normal;
     letter-spacing: 0.9px;
     text-transform: uppercase;
+    cursor: pointer;
     @media (max-width: 1280px) {
       display: none;
     }

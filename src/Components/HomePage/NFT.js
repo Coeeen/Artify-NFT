@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
-function NFT({ img, name, ownerName, ownerPicture, price, numberLicked }) {
+
+function NFT({ id, img, name, ownerName, ownerPicture, price, numberLicked }) {
   const [Liked, setLiked] = useState(false);
   const [NumberOfLike, setNumberOfLike] = useState(numberLicked);
   function ToggleLicked() {
@@ -25,7 +27,9 @@ function NFT({ img, name, ownerName, ownerPicture, price, numberLicked }) {
           <h4>Owner</h4>
           <h3>{ownerName}</h3>
         </DetailInfo>
-        <button>BUY IT</button>
+        <Link to={`/explore/${id}`}>
+          <button>BUY IT</button>
+        </Link>
       </OwnerInfo>
       <Line>&zwnj; </Line>
       <BottomCard>
@@ -41,8 +45,8 @@ function NFT({ img, name, ownerName, ownerPicture, price, numberLicked }) {
 
 const NFTStyle = styled.div`
   height: 30rem;
-  background-color: #141420;
-  border-radius: 20px;
+  border-radius: 28px;
+  background: #0e0e17;
   width: 20rem;
   padding: 25px;
   display: flex;
@@ -75,7 +79,7 @@ const OwnerInfo = styled.div`
     background-color: #553396;
     color: white;
     cursor: pointer;
-    width: 7rem;
+    width: 5rem;
     font-family: "Outfit";
     font-weight: 400;
     border-radius: 20px;

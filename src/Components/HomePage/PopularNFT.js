@@ -1,14 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import NFT from "./NFT";
-
-import nft13 from "../../img/Nft/Nft13.jpg";
-import nft15 from "../../img/Nft/Nft15.jpg";
-import nft17 from "../../img/Nft/Nft17.jpg";
-
-import OwnerOne from "../../img/creators/model1.jpg";
-import OwnerTwo from "../../img/creators/model2.jpg";
-import OwnerThree from "../../img/creators/model3.jpg";
+import { PopularNFTCollection } from "../Database";
 
 function PopularNFT() {
   return (
@@ -18,30 +11,18 @@ function PopularNFT() {
         <h3>FOR TODAY {new Date().toLocaleDateString()} </h3>
       </Heading>
       <PopularNFTContainer>
-        <NFT
-          img={nft15}
-          name={"BABY BEAR #120"}
-          ownerName={"#PixelNinja"}
-          ownerPicture={OwnerOne}
-          price="4.99$"
-          numberLicked={999}
-        />
-        <NFT
-          img={nft17}
-          name={" COOL SKULL #293"}
-          ownerName={"#TechnoGuru"}
-          ownerPicture={OwnerTwo}
-          price="4.99$"
-          numberLicked={776}
-        />
-        <NFT
-          img={nft13}
-          name={" CREEPY SKULL #293"}
-          ownerName={"#GalacticJester"}
-          ownerPicture={OwnerThree}
-          price="4.99$"
-          numberLicked={2136}
-        />
+        {PopularNFTCollection.map((el) => (
+          <NFT
+            id={el.id}
+            img={el.img}
+            name={el.name}
+            ownerName={el.ownerName}
+            ownerPicture={el.ownerPicture}
+            price={el.price}
+            numberLicked={el.numberLikes}
+            key={el.id}
+          />
+        ))}
       </PopularNFTContainer>
     </PopularNFTStyle>
   );

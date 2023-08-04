@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <NavbarStyle>
-      <h1>ARTIFY</h1>
+      <StyledLink to="/">
+        <h1>ARTIFY</h1>{" "}
+      </StyledLink>
       <div>
         <ul>
           <StyledLink to="/">

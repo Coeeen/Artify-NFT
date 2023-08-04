@@ -16,7 +16,7 @@ function RegisterInput() {
         ></Lottie>
         <InputContainer>
           <input type="text" placeholder="E-mail"></input>
-          <input type="text" placeholder="Login"></input>
+          <input type="text" placeholder="Login" required></input>
           <div>
             <input type="text" placeholder="Password"></input>
             <p>
@@ -49,7 +49,7 @@ export default RegisterInput;
 const LoginInputStyle = styled.div`
   margin: 1rem;
   h1 {
-    font-size: 3rem;
+    font-size: 3.6rem;
     margin: 0;
     font-weight: bold;
     letter-spacing: 2px;
@@ -80,6 +80,7 @@ const LottieStyle = styled.div`
     margin: 20px 10px;
     box-sizing: border-box;
     border: none;
+    text-align: center;
     border-bottom: 2px solid white;
     background-color: 141420;
     color: white;

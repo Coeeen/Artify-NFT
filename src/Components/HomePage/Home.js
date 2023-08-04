@@ -124,7 +124,6 @@ const JoinUsButton = styled.button`
   @media (max-width: 1280px) {
     width: 5 rem;
     padding: 1rem;
-    font-size: 0.6rem;
   }
 `;
 

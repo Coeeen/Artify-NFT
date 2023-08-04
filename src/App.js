@@ -7,6 +7,8 @@ import LoginMainPage from "./LoginMainPage";
 import RegisterMainPage from "./RegisterMainPage";
 import ContactUsPage from "./ContactUsPage";
 import ExploreMorePage from "./ExploreMorePage";
+import ForgetPasswordPage from "./ForgetPasswordPage";
+import DetailNft from "./DetailNft";
 
 function ScrollToTop() {
   const location = useLocation();
@@ -29,6 +31,8 @@ function App() {
           <Route path="/login" element={<LoginMainPage />} />
           <Route path="/contact" element={<ContactUsPage />} />
           <Route path="/register" element={<RegisterMainPage />} />
+          <Route path="/forgot" element={<ForgetPasswordPage />} />
+          <Route path="/explore/:id" element={<DetailNft />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -24,8 +24,15 @@ function SearchBy() {
           lazyLoad: true,
           speed: 10000,
           breakpoints: {
-            762: {
+            640: {
               perPage: 1,
+            },
+            768: {
+              perPage: 2,
+            },
+
+            1024: {
+              perPage: 3,
             },
           },
         }}
@@ -33,6 +40,7 @@ function SearchBy() {
         {PuppyNFT.map((data) => (
           <SplideSlide key={data.id}>
             <NFT
+              id={data.id}
               img={data.img}
               ownerName={data.ownerName}
               ownerPicture={data.ownerPicture}
@@ -53,8 +61,15 @@ function SearchBy() {
           lazyLoad: true,
           speed: 10000,
           breakpoints: {
-            762: {
+            640: {
               perPage: 1,
+            },
+            768: {
+              perPage: 2,
+            },
+
+            1024: {
+              perPage: 3,
             },
           },
         }}
@@ -62,6 +77,7 @@ function SearchBy() {
         {MonkeyNFT.map((data) => (
           <SplideSlide key={data.id}>
             <NFT
+              id={data.id}
               img={data.img}
               ownerName={data.ownerName}
               ownerPicture={data.ownerPicture}
@@ -107,9 +123,9 @@ const Header = styled.h3`
   }
 `;
 const SubHeader = styled.h3`
-  color: #fff;
+  color: white;
   font-size: 2em;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin: 3% 4%;
