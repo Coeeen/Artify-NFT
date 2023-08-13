@@ -33,8 +33,9 @@ function NFTBuy() {
   ];
 
   //End day
-  const Hours = new Date().getHours();
-  const Minutes = new Date().getMinutes();
+  const Hours = 24 - new Date().getHours();
+  const Minutes = 60 - new Date().getMinutes();
+  const Seconds = 60 - new Date().getSeconds();
 
   const [Like, setLike] = useState(false);
 
@@ -64,7 +65,7 @@ function NFTBuy() {
         <TextContainer>
           <Timer>
             <h1>AUCTIONS ENDS IN </h1>
-            <h2>{`${Hours} hours and ${Minutes} Minutes`}</h2>
+            <h2>{`${Hours} hours and ${Minutes} Minutes ${Seconds}`}</h2>
           </Timer>
           <Timer>
             <p>

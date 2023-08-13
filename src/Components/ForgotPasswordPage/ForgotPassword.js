@@ -27,6 +27,7 @@ function ForgotPassword() {
               type="email"
               id="email"
               pattern=".+@globex\.com"
+              required
             ></input>
             <button onClick={() => SendEmail()}>Reset Password</button>
           </LottieStyle>
@@ -44,6 +45,7 @@ function ForgotPassword() {
               type="password"
               placeholder="Code"
               maxlength="5"
+              required
               value={emailValue}
               onChange={(e) => setEmailValue(e.target.value)}
             ></input>
@@ -84,16 +86,16 @@ const LottieStyle = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   input,
   textarea {
-    background-color: #141420;
+    background-color: transparent;
     width: 20%;
     padding: 12px 20px;
     margin-top: 3rem;
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid white;
-    background-color: 141420;
     color: white;
     font-family: "Outfit";
     text-align: center;
@@ -113,7 +115,7 @@ const LottieStyle = styled.div`
     cursor: pointer;
   }
   div {
-    background-color: #141420;
+    background-color: transparent;
     border-radius: 20px;
     height: auto;
     max-width: fit-content;

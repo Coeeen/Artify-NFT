@@ -70,7 +70,6 @@ const LottieStyle = styled.div`
   flex-direction: column;
   input[type="text"],
   textarea {
-    background-color: #141420;
     width: 20%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -78,7 +77,7 @@ const LottieStyle = styled.div`
     border: none;
     text-align: center;
     border-bottom: 2px solid white;
-    background-color: 141420;
+    background-color: transparent;
     color: white;
     font-family: "Outfit";
     &:focus {

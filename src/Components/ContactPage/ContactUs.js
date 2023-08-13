@@ -170,14 +170,13 @@ const ContactInfo = styled.div`
   flex: 2;
   input[type="text"],
   textarea {
-    background-color: #141420;
     width: 60%;
     padding: 12px 20px;
     margin: 20px 10px;
     box-sizing: border-box;
     border: none;
     border-bottom: 2px solid white;
-    background-color: 141420;
+    background-color: transparent;
     color: white;
     font-family: "Outfit";
     text-align: center;

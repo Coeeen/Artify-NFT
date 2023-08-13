@@ -82,7 +82,7 @@ const LottieStyle = styled.div`
     border: none;
     text-align: center;
     border-bottom: 2px solid white;
-    background-color: 141420;
+    background-color: transparent;
     color: white;
     font-family: "Outfit";
     text-align: center;
