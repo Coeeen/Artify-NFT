@@ -77,6 +77,9 @@ const ExploreMoreContainer = styled.div`
   & > div:nth-child(n + 5) {
     filter: blur(10px);
     -webkit-filter: blur(10px);
+    button {
+      cursor: auto;
+    }
   }
 `;
 const SearchForMoreStyle = styled.div`

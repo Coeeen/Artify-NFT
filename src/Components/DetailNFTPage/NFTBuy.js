@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
@@ -33,11 +32,12 @@ function NFTBuy() {
   ];
 
   //End day
-  const Hours = 24 - new Date().getHours();
-  const Minutes = 60 - new Date().getMinutes();
-  const Seconds = 60 - new Date().getSeconds();
 
   const [Like, setLike] = useState(false);
+
+  const Hours = new Date().getHours();
+  const Minutes = 60 - new Date().getMinutes();
+  const Seconds = 60 - new Date().getSeconds();
 
   return (
     <>
