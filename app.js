@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
@@ -12,6 +13,9 @@ app.use(express.static(`${__dirname}/public`))
 // HTTPS
 app.use(helmet())
 
+//corsy
+app.use(cors())
+
 // Parser, limit size
 app.use(express.json({ limit: '10kb' }))
 
@@ -22,20 +26,19 @@ app.use(mongoSanitize())
 app.use(xss())
 
 // Rate limiting
-const limiter = rateLimit({
-  max: 100,
-  windowMs: 60 * 60 * 1000,
-  message: 'Too many requests from this IP, please try again in an hour',
-})
+// const limiter = rateLimit({
+//   max: 100,
+//   windowMs: 60 * 60 * 1000,
+//   message: 'Too many requests from this IP, please try again in an hour',
+// })
 
-app.use('/api', limiter)
+// app.use('/api', limiter)
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString()
   next()
 })
 
-// Mount the router
 app.use('/api/v1/nfts', nftView)
 
 module.exports = app

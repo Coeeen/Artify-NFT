@@ -1,14 +1,39 @@
-import React from "react";
-import styled from "styled-components";
-import Lottie from "lottie-react";
+import React, { useRef } from 'react'
+import emailjs from '@emailjs/browser'
+import styled from 'styled-components'
+import Lottie from 'lottie-react'
 
-import { HiMail } from "react-icons/hi";
-import { BsTelephoneFill } from "react-icons/bs";
-import { ImOffice } from "react-icons/im";
-import { BsClockFill } from "react-icons/bs";
+import { HiMail } from 'react-icons/hi'
+import { BsTelephoneFill } from 'react-icons/bs'
+import { ImOffice } from 'react-icons/im'
+import { BsClockFill } from 'react-icons/bs'
 
-import ContactSVG from "../../img/Svg/ContactUsAnimation.json";
+import ContactSVG from '../../img/Svg/ContactUsAnimation.json'
+
 function ContactUs() {
+  const form = useRef()
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    emailjs
+      .sendForm(
+        'service_0qy9wii',
+        'template_jff7npz',
+        form.current,
+        '89YEmMwrb25szBh_Q',
+      )
+      .then(
+        (result) => {
+          console.log(result)
+          e.target.reset()
+        },
+        (error) => {
+          console.log(error.text)
+        },
+      )
+  }
+
   return (
     <>
       <HeaderStyle>
@@ -21,23 +46,39 @@ function ContactUs() {
 
       <ContactUsStyle>
         <ContactInfo>
-          <input type="text" placeholder="E-mail"></input>
-          <input type="text" placeholder="Password"></input>
-          <input type="text" placeholder="Message"></input>
-          <button>SEND MESSAGE</button>
+          <input
+            type="text"
+            placeholder="Full Name"
+            name="from_name"
+            required
+          ></input>
+          <input
+            type="text"
+            placeholder="E-mail"
+            name="to_name"
+            required
+          ></input>
+
+          <input
+            type="text"
+            placeholder="Message"
+            name="message"
+            required
+          ></input>
+          <button onClick={sendEmail}>SEND MESSAGE</button>
         </ContactInfo>
         <ContactCard>
-          {" "}
+          {' '}
           <Card>
             <Lottie
               animationData={ContactSVG}
               style={{
-                height: "400px",
-                width: "400px",
-                position: "absolute",
-                bottom: "-10%",
-                right: "0%",
-                opacity: "70%",
+                height: '400px',
+                width: '400px',
+                position: 'absolute',
+                bottom: '-10%',
+                right: '0%',
+                opacity: '70%',
               }}
             ></Lottie>
             <h1>You can reach us by...</h1>
@@ -71,10 +112,10 @@ function ContactUs() {
         </ContactCard>
       </ContactUsStyle>
     </>
-  );
+  )
 }
 
-export default ContactUs;
+export default ContactUs
 
 const HeaderStyle = styled.div`
   h1 {
@@ -97,19 +138,19 @@ const HeaderStyle = styled.div`
     color: white;
     text-align: center;
   }
-`;
+`
 
 const ContactUsStyle = styled.div`
   display: flex;
   flex-direction: row;
   height: 34.2rem;
-`;
+`
 
 const ContactCard = styled.div`
   display: flex;
   flex: 1;
   text-align: center;
-`;
+`
 
 const Card = styled.div`
   background: linear-gradient(
@@ -159,7 +200,7 @@ const Card = styled.div`
       display: none;
     }
   }
-`;
+`
 
 const ContactInfo = styled.div`
   display: flex;
@@ -168,7 +209,7 @@ const ContactInfo = styled.div`
   margin-left: 3rem;
   align-items: center;
   flex: 2;
-  input[type="text"],
+  input[type='text'],
   textarea {
     width: 60%;
     padding: 12px 20px;
@@ -178,7 +219,7 @@ const ContactInfo = styled.div`
     border-bottom: 2px solid white;
     background-color: transparent;
     color: white;
-    font-family: "Outfit";
+    font-family: 'Outfit';
     text-align: center;
     &:focus {
       outline: none;
@@ -191,11 +232,11 @@ const ContactInfo = styled.div`
     margin-top: 1rem;
     background-color: transparent;
     box-shadow: 0 0 5px #fff;
-    font-family: "Outfit";
+    font-family: 'Outfit';
     font-weight: bold;
     font-size: 1rem;
     padding: 1.2rem;
     cursor: pointer;
     border: none;
   }
-`;
+`

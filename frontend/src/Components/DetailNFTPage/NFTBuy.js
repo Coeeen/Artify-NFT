@@ -1,95 +1,86 @@
-import styled from "styled-components";
-import { useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import { AiFillHeart } from "react-icons/ai";
-import { AiOutlineHeart } from "react-icons/ai";
-import { AllNFT } from "../Database";
-import SimilarNFT from "./SimilarNFT";
+import { useState, useEffect } from 'react'
+import { useParams, Link } from 'react-router-dom'
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
+import { AllNFT } from '../Database'
+import SimilarNFT from './SimilarNFT'
+import { useMyContext } from '../../store/nfts/main'
+import styled from 'styled-components'
 
 function NFTBuy() {
-  //Search for ID
-  const params = useParams();
-  const id = parseInt(params.id);
-  const nft = AllNFT.find((item) => item.id === id);
+  const { data, dataNft, fetchNft, fetchRandomNfts } = useMyContext()
+  let { id } = useParams()
+  console.log(id, dataNft)
 
-  //show next Nft by id
-  const currentIndex = AllNFT.findIndex((item) => item.id === id);
+  useEffect(() => {
+    if (!dataNft && id) {
+      fetchNft(id)
+      fetchRandomNfts()
+    }
+  }, [id, dataNft, fetchNft])
 
-  const nftNext = currentIndex !== -1 && AllNFT[currentIndex + 1];
-  const nftPrev = currentIndex !== -1 && AllNFT[currentIndex - 1];
-  const nftTwoNext = currentIndex !== -1 && AllNFT[currentIndex + 2];
-
-  const similarNftCollection = [
-    {
-      ...nftTwoNext,
-    },
-    {
-      ...nftNext,
-    },
-    {
-      ...nftPrev,
-    },
-  ];
-
-  //End day
-
-  const [Like, setLike] = useState(false);
-
-  const Hours = new Date().getHours();
-  const Minutes = 60 - new Date().getMinutes();
-  const Seconds = 60 - new Date().getSeconds();
+  // End day
+  const [Like, setLike] = useState(false)
+  const Hours = new Date().getHours()
+  const Minutes = 60 - new Date().getMinutes()
+  const Seconds = 60 - new Date().getSeconds()
 
   return (
-    <>
-      <Container>
-        <NFTContainer>
-          <NFTStyle>
-            <img src={nft.img} alt={nft.name}></img>
-            <h2>{nft.name}</h2>
-            <OwnerInfo>
-              <img src={nft.ownerPicture} alt={nft.ownerName}></img>
-              <DetailInfo>
-                <h4>Owner</h4>
-                <h3>{nft.ownerName}</h3>
-              </DetailInfo>
-            </OwnerInfo>
-            <Line>&zwnj; </Line>
-            <BottomCard>
-              <h1>{nft.price}</h1>
-              <button onClick={() => setLike(!Like)}>
-                {Like ? <AiFillHeart /> : <AiOutlineHeart />}
-              </button>
-            </BottomCard>
-          </NFTStyle>
-        </NFTContainer>
-        <TextContainer>
-          <Timer>
-            <h1>AUCTIONS ENDS IN </h1>
-            <h2>{`${Hours} hours and ${Minutes} Minutes ${Seconds}`}</h2>
-          </Timer>
-          <Timer>
-            <p>
-              Step into the mesmerizing world of NFTs, where digital art meets
-              blockchain technology, offering a new paradigm of ownership and
-              creativity for collectors and creators alike
-            </p>
-          </Timer>
-          <ButtonContainer>
-            <Link to="/login">
-              <BuyNow>BUY NOW!</BuyNow>
-            </Link>
-            <Link to="/login">
-              <MakeOffer>MAKE OFFER!</MakeOffer>
-            </Link>
-          </ButtonContainer>
-        </TextContainer>
-      </Container>
-      <SimilarNFT similarNftCollection={similarNftCollection} />
-    </>
-  );
+    <div>
+      {dataNft && (
+        <Container>
+          <NFTContainer>
+            <NFTStyle>
+              <img src={dataNft.img} alt={dataNft.name} />
+              <h2>{dataNft.name}</h2>
+              <OwnerInfo>
+                <img src={dataNft.ownerImg} alt={dataNft.ownerName} />
+                <NFTInfoText>
+                  <DetailInfo>
+                    <h4>Owner</h4>
+                    <h3>{dataNft.owner}</h3>
+                  </DetailInfo>
+                  <DetailInfo>
+                    <h4>Views</h4>
+                    <h3>{dataNft.views}</h3>
+                  </DetailInfo>
+                </NFTInfoText>
+              </OwnerInfo>
+              <Line>&zwnj; </Line>
+              <BottomCard>
+                <h1>{dataNft.price}</h1>
+                <button onClick={() => setLike(!Like)}>
+                  {dataNft.numberLikes}
+                  {Like ? <AiFillHeart /> : <AiOutlineHeart />}
+                </button>
+              </BottomCard>
+            </NFTStyle>
+          </NFTContainer>
+          <TextContainer>
+            <Timer>
+              <h1>AUCTIONS ENDS IN </h1>
+              <h2>{`${Hours} hours and ${Minutes} Minutes ${Seconds}`}</h2>
+            </Timer>
+            <Timer>
+              <p>{dataNft.description}</p>
+            </Timer>
+            <ButtonContainer>
+              <Link to="/login">
+                <BuyNow>BUY NOW!</BuyNow>
+              </Link>
+              <Link to="/login">
+                <MakeOffer>MAKE OFFER!</MakeOffer>
+              </Link>
+            </ButtonContainer>
+          </TextContainer>
+        </Container>
+      )}
+
+      {dataNft && data && <SimilarNFT similarNftCollection={data} />}
+    </div>
+  )
 }
 
-export default NFTBuy;
+export default NFTBuy
 
 const Container = styled.div`
   display: flex;
@@ -100,7 +91,7 @@ const Container = styled.div`
     height: auto;
     flex-direction: column;
   }
-`;
+`
 
 const TextContainer = styled.div`
   display: flex;
@@ -109,13 +100,19 @@ const TextContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   color: white;
-`;
+`
 
 const NFTContainer = styled.div`
   display: flex;
   flex: 1;
   justify-content: center;
-`;
+`
+
+const NFTInfoText = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+`
 
 const NFTStyle = styled.div`
   height: 40rem;
@@ -147,7 +144,7 @@ const NFTStyle = styled.div`
     width: 7rem;
     height: 3rem;
     color: white;
-    font-family: "Outfit";
+    font-family: 'Outfit';
     cursor: pointer;
     font-size: 20px;
     display: flex;
@@ -158,7 +155,7 @@ const NFTStyle = styled.div`
       transform: scale(1.5);
     }
   }
-`;
+`
 
 const OwnerInfo = styled.div`
   display: flex;
@@ -170,7 +167,7 @@ const OwnerInfo = styled.div`
     border-radius: 20px;
     margin-right: 2rem;
   }
-`;
+`
 
 const DetailInfo = styled.div`
   text-align: left;
@@ -185,14 +182,14 @@ const DetailInfo = styled.div`
     color: rgba(255, 255, 255, 0.7);
     font-weight: 400;
   }
-`;
+`
 
 const Line = styled.div`
   width: 100%;
   background-color: #181839;
   height: 5px;
   margin: 10px 0px;
-`;
+`
 
 const BottomCard = styled.div`
   margin: none;
@@ -205,7 +202,7 @@ const BottomCard = styled.div`
     color: white;
     margin-left: 2rem;
   }
-`;
+`
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -219,7 +216,7 @@ const ButtonContainer = styled.div`
     flex-direction: column;
     gap: 2rem;
   }
-`;
+`
 
 const MakeOffer = styled.button`
   width: 15rem;
@@ -229,12 +226,12 @@ const MakeOffer = styled.button`
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
   padding: 1.5rem;
   cursor: pointer;
-  font-family: "Outfit";
+  font-family: 'Outfit';
   font-weight: bolder;
   font-size: 1.5rem;
   font-weight: 400;
   border: 1px solid white;
-`;
+`
 
 const BuyNow = styled.button`
   cursor: pointer;
@@ -243,12 +240,12 @@ const BuyNow = styled.button`
   border-radius: 26px;
   background: #fff;
   box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.25);
-  font-family: "Outfit";
+  font-family: 'Outfit';
   font-weight: bolder;
   font-size: 1.5rem;
   font-weight: 400;
   border: 1px solid white;
-`;
+`
 
 const Timer = styled.div`
   background-color: #0e0e17;
@@ -265,4 +262,4 @@ const Timer = styled.div`
     font-size: 1.5rem;
     font-weight: lighter;
   }
-`;
+`

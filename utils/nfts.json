@@ -1,254 +1,365 @@
 [
   {
-    "img": "public/img/Nft1.jpg",
+    "img": "https://i.ibb.co/D8LK4Y7/monke1.jpg",
     "name": "SPORT MANIAC #327",
+    "owner": "BionicBanana",
+    "ownerImg": "https://i.ibb.co/d5tGMdZ/model1.jpg",
     "price": 7.99,
     "numberLikes": 105,
-    "type": "All"
+    "type": "MonkeyNFT",
+    "description": "Exciting sports-themed NFT featuring a dynamic action scene. Limited edition!",
+    "views": 1203
   },
   {
-    "img": "public/img/Nft2.jpg",
+    "img": "https://i.ibb.co/f49y3Dp/monke2.jpg",
     "name": "CUPMAN #915",
+    "owner": "GamerGorilla",
+    "ownerImg": "https://i.ibb.co/KWwHWLR/model3.jpg",
     "price": 5.99,
     "numberLikes": 120,
-    "type": "All"
+    "type": "MonkeyNFT",
+    "description": "Elegant cup-themed NFT perfect for collectors. Show off your sophistication!",
+    "views": 956
   },
   {
-    "img": "public/img/Nft3.jpg",
+    "img": "https://i.ibb.co/GFtcJHB/monke3.jpg",
     "name": "CLOUD BOY #105",
+    "owner": "PixelPirate",
+    "ownerImg": "https://i.ibb.co/d5tGMdZ/model1.jpg",
     "price": 11.99,
     "numberLikes": 473,
-    "type": "All"
+    "type": "MonkeyNFT",
+    "description": "Dreamy NFT with a cloud-inspired design. Let your imagination soar!",
+    "views": 2138
   },
   {
-    "img": "public/img/Nft4.jpg",
+    "img": "https://i.ibb.co/PzqfsxM/monke4.jpg",
     "name": "HEART SKULL #325",
+    "owner": "TechNinja",
+    "ownerImg": "https://i.ibb.co/QQBFkmt/model2.jpg",
     "price": 14.99,
     "numberLikes": 588,
-    "type": "All"
+    "type": "MonkeyNFT",
+    "description": "Mysterious NFT featuring a heart and skull motif. Perfect for dark art lovers!",
+    "views": 1776
   },
   {
-    "img": "public/img/Nft5.jpg",
+    "img": "https://i.ibb.co/QMrFfCf/monke5.jpg",
     "name": "NFT Thirteen",
+    "owner": "NeonNebula",
+    "ownerImg": "https://i.ibb.co/p1DC6Nj/model4.jpg",
     "price": 11.99,
     "numberLikes": 695,
-    "type": "All"
+    "type": "MonkeyNFT",
+    "description": "Futuristic NFT with a sleek and minimalistic design. Add a touch of modernity to your collection!",
+    "views": 2465
   },
   {
-    "img": "public/img/Nft6.jpg",
+    "img": "https://i.ibb.co/b5599y3/monke6.jpg",
     "name": "MonkeyKing",
+    "owner": "CosmicChimp",
+    "ownerImg": "https://i.ibb.co/p1DC6Nj/model4.jpg",
     "price": 13.99,
     "numberLikes": 115,
-    "type": "All"
+    "type": "MonkeyNFT",
+    "description": "Regal and majestic NFT featuring the king of the monkeys. Rule your collection with this iconic piece!",
+    "views": 843
   },
   {
-    "img": "public/img/Nft7.jpg",
+    "img": "https://i.ibb.co/9T4sr4v/monster1.jpg",
     "name": "CyberNinja",
+    "owner": "GalacticGuru",
+    "ownerImg": "https://i.ibb.co/QQBFkmt/model2.jpg",
     "price": 4.99,
     "numberLikes": 176,
-    "type": "All"
+    "type": "All",
+    "description": "Sleek and futuristic NFT with cybernetic ninja design. Unleash your inner warrior!",
+    "views": 2234
   },
   {
-    "img": "public/img/Nft8.jpg",
+    "img": "https://i.ibb.co/grNcBJW/monster2.jpg",
     "name": "SpacePirate",
+    "owner": "TechTrooper",
+    "ownerImg": "https://i.ibb.co/KWwHWLR/model3.jpg",
     "price": 4.99,
     "numberLikes": 334,
-    "type": "All"
+    "type": "All",
+    "description": "Adventure awaits with this space-themed NFT featuring a daring pirate. Explore the cosmos!",
+    "views": 1897
   },
   {
-    "img": "public/img/Nft9.jpg",
+    "img": "https://i.ibb.co/D8LK4Y7/monke1.jpg",
+    "name": "SPORT MANIAC #327",
+    "owner": "BionicBanana",
+    "ownerImg": "https://i.ibb.co/d5tGMdZ/model1.jpg",
+    "price": 7.99,
+    "numberLikes": 105,
+    "type": "All",
+    "description": "Exciting sports-themed NFT featuring a dynamic action scene. Limited edition!",
+    "views": 1203
+  },
+  {
+    "img": "https://i.ibb.co/f49y3Dp/monke2.jpg",
+    "name": "CUPMAN #915",
+    "owner": "GamerGorilla",
+    "ownerImg": "https://i.ibb.co/KWwHWLR/model3.jpg",
+    "price": 5.99,
+    "numberLikes": 120,
+    "type": "All",
+    "description": "Elegant cup-themed NFT perfect for collectors. Show off your sophistication!",
+    "views": 956
+  },
+  {
+    "img": "https://i.ibb.co/GFtcJHB/monke3.jpg",
+    "name": "CLOUD BOY #105",
+    "owner": "PixelPirate",
+    "ownerImg": "https://i.ibb.co/d5tGMdZ/model1.jpg",
+    "price": 11.99,
+    "numberLikes": 473,
+    "type": "All",
+    "description": "Dreamy NFT with a cloud-inspired design. Let your imagination soar!",
+    "views": 2138
+  },
+  {
+    "img": "https://i.ibb.co/PzqfsxM/monke4.jpg",
+    "name": "HEART SKULL #325",
+    "owner": "TechNinja",
+    "ownerImg": "https://i.ibb.co/QQBFkmt/model2.jpg",
+    "price": 14.99,
+    "numberLikes": 588,
+    "type": "All",
+    "description": "Mysterious NFT featuring a heart and skull motif. Perfect for dark art lovers!",
+    "views": 1776
+  },
+  {
+    "img": "https://i.ibb.co/QMrFfCf/monke5.jpg",
+    "name": "NFT Thirteen",
+    "owner": "NeonNebula",
+    "ownerImg": "https://i.ibb.co/p1DC6Nj/model4.jpg",
+    "price": 11.99,
+    "numberLikes": 695,
+    "type": "All",
+    "description": "Futuristic NFT with a sleek and minimalistic design. Add a touch of modernity to your collection!",
+    "views": 2465
+  },
+  {
+    "img": "https://i.ibb.co/b5599y3/monke6.jpg",
+    "name": "MonkeyKing",
+    "owner": "CosmicChimp",
+    "ownerImg": "https://i.ibb.co/p1DC6Nj/model4.jpg",
+    "price": 13.99,
+    "numberLikes": 115,
+    "type": "All",
+    "description": "Regal and majestic NFT featuring the king of the monkeys. Rule your collection with this iconic piece!",
+    "views": 843
+  },
+  {
+    "img": "https://i.ibb.co/9T4sr4v/monster1.jpg",
+    "name": "CyberNinja",
+    "owner": "GalacticGuru",
+    "ownerImg": "https://i.ibb.co/QQBFkmt/model2.jpg",
+    "price": 4.99,
+    "numberLikes": 176,
+    "type": "All",
+    "description": "Sleek and futuristic NFT with cybernetic ninja design. Unleash your inner warrior!",
+    "views": 2234
+  },
+  {
+    "img": "https://i.ibb.co/grNcBJW/monster2.jpg",
+    "name": "SpacePirate",
+    "owner": "TechTrooper",
+    "ownerImg": "https://i.ibb.co/KWwHWLR/model3.jpg",
+    "price": 4.99,
+    "numberLikes": 334,
+    "type": "All",
+    "description": "Adventure awaits with this space-themed NFT featuring a daring pirate. Explore the cosmos!",
+    "views": 1897
+  },
+  {
+    "img": "https://i.ibb.co/LPMH24f/monster3.jpg",
     "name": "RoboWarrior",
+    "owner": "LaserLion",
+    "ownerImg": "https://i.ibb.co/d5tGMdZ/model1.jpg",
     "price": 7.99,
     "numberLikes": 489,
-    "type": "All"
+    "type": "All",
+    "description": "Powerful and fierce NFT featuring a robotic warrior. Dominate your collection with this mechanized marvel!",
+    "views": 2156
   },
   {
-    "img": "public/img/Nft10.jpg",
+    "img": "https://i.ibb.co/vQz8ZCx/monster4.jpg",
     "name": "JungleExplorer",
+    "owner": "GalacticGuardian",
+    "ownerImg": "https://i.ibb.co/QQBFkmt/model2.jpg",
     "price": 2.99,
     "numberLikes": 345,
-    "type": "All"
+    "type": "All",
+    "description": "Embark on a thrilling adventure with this jungle-themed NFT. Discover hidden treasures in the wild!",
+    "views": 987
   },
   {
-    "img": "public/img/Nft11.jpg",
+    "img": "https://i.ibb.co/WVTmyxc/monster5.jpg",
     "name": "TechnoMage",
+    "owner": "PixelProtector",
+    "ownerImg": "https://i.ibb.co/p1DC6Nj/model4.jpg",
     "price": 2.99,
     "numberLikes": 223,
-    "type": "All"
+    "type": "All",
+    "description": "Magical NFT with a techno twist. Cast spells and enchant your collection with this digital mage!",
+    "views": 654
   },
   {
-    "img": "public/img/Nft12.jpg",
+    "img": "https://i.ibb.co/T488q5M/monster6.jpg",
     "name": "CosmicWizard",
+    "owner": "SpaceSorcerer",
+    "ownerImg": "https://i.ibb.co/d5tGMdZ/model1.jpg",
     "price": 1.99,
     "numberLikes": 913,
-    "type": "All"
+    "type": "All",
+    "description": "Ethereal NFT imbued with cosmic energy. Unravel the mysteries of the universe with this mystical wizard!",
+    "views": 3125
   },
   {
-    "img": "public/img/Nft13.jpg",
+    "img": "https://i.ibb.co/vz4xt5J/Nft1.jpg",
     "name": "LunarSorcerer",
+    "owner": "TechTitan",
+    "ownerImg": "https://i.ibb.co/KWwHWLR/model3.jpg",
     "price": 1.99,
     "numberLikes": 867,
-    "type": "All"
+    "type": "All",
+    "description": "Harness the power of the moon with this lunar-themed NFT. Tap into ancient magic and illuminate your collection!",
+    "views": 1567
   },
   {
-    "img": "public/img/Nft14.jpg",
+    "img": "https://i.ibb.co/jkVD9jq/Nft2.jpg",
     "name": "GalacticKnight",
+    "owner": "RoboRanger",
+    "ownerImg": "https://i.ibb.co/d5tGMdZ/model1.jpg",
     "price": 0.99,
     "numberLikes": 287,
-    "type": "All"
+    "type": "All",
+    "description": "Brave and honorable NFT inspired by the gallant knights of the galaxy. Ride into battle with this noble warrior!",
+    "views": 857
   },
   {
-    "img": "public/img/Nft15.jpg",
+    "img": "https://i.ibb.co/k0HmHnj/Nft3.jpg",
     "name": "NeonHero",
+    "owner": "PixelPioneer",
+    "ownerImg": "https://i.ibb.co/QQBFkmt/model2.jpg",
     "price": 4.99,
     "numberLikes": 323,
-    "type": "All"
+    "type": "All",
+    "description": "Dazzling NFT with neon colors and heroic theme. Shine bright with this beacon of valor!",
+    "views": 1098
   },
   {
-    "img": "public/img/Nft16.jpg",
+    "img": "https://i.ibb.co/VSm5MNb/Nft4.jpg",
     "name": "LaserGuardian",
+    "owner": "CyberSamurai",
+    "ownerImg": "https://i.ibb.co/p1DC6Nj/model4.jpg",
     "price": 8.99,
     "numberLikes": 653,
-    "type": "All"
+    "type": "All",
+    "description": "Protective NFT armed with laser technology. Safeguard your collection with this vigilant guardian!",
+    "views": 2453
   },
   {
-    "img": "public/img/Nft17.jpg",
+    "img": "https://i.ibb.co/n7DjJMX/Nft5.jpg",
     "name": "PixelChampion",
+    "owner": "TechTiger",
+    "ownerImg": "https://i.ibb.co/KWwHWLR/model3.jpg",
     "price": 3.99,
     "numberLikes": 543,
-    "type": "All"
+    "type": "All",
+    "description": "Bold and vibrant NFT representing pixelated heroism. Embrace the spirit of victory with this champion!",
+    "views": 1742
   },
   {
-    "img": "public/img/Nft18.jpg",
+    "img": "https://i.ibb.co/HxLM3YW/Nft7.jpg",
     "name": "SpaceAdventurer",
+    "owner": "GalacticGlider",
+    "ownerImg": "https://i.ibb.co/QQBFkmt/model2.jpg",
     "price": 12.99,
     "numberLikes": 423,
-    "type": "All"
+    "type": "All",
+    "description": "Courageous explorer NFT ready to brave the depths of space. Embark on an epic journey with this intrepid adventurer!",
+    "views": 2089
   },
   {
-    "img": "public/img/Nft19.jpg",
-    "name": "MechaWarrior",
-    "price": 5.99,
-    "numberLikes": 123,
-    "type": "All"
-  },
-  {
-    "img": "public/img/Nft20.jpg",
+    "img": "https://i.ibb.co/Tmb31vX/Nft8.jpg",
     "name": "VortexHero",
+    "owner": "TechTraveller",
+    "ownerImg": "https://i.ibb.co/KWwHWLR/model3.jpg",
     "price": 6.99,
     "numberLikes": 633,
-    "type": "All"
+    "type": "All",
+    "description": "Heroic NFT capable of manipulating space-time with vortex powers. Bend reality to your will with this cosmic champion!",
+    "views": 1845
   },
   {
-    "img": "public/img/Nft21.jpg",
+    "img": "https://i.ibb.co/481wYnZ/Nft9.jpg",
     "name": "GalaxyChampion",
+    "owner": "PixelPatriot",
+    "ownerImg": "https://i.ibb.co/QQBFkmt/model2.jpg",
     "price": 9.99,
     "numberLikes": 312,
-    "type": "All"
+    "type": "All",
+    "description": "Noble champion NFT hailing from the far reaches of the galaxy. Stand as a beacon of hope with this cosmic hero!",
+    "views": 1597
   },
   {
-    "img": "public/img/Nft22.jpg",
+    "img": "https://i.ibb.co/N7qrvfh/Nft10.jpg",
     "name": "InfinityWarrior",
+    "owner": "TechTrojan",
+    "ownerImg": "https://i.ibb.co/d5tGMdZ/model1.jpg",
     "price": 12.99,
     "numberLikes": 431,
-    "type": "All"
+    "type": "All",
+    "description": "Mighty warrior NFT capable of transcending the bounds of time and space. Conquer infinity with this eternal warrior!",
+    "views": 2065
   },
   {
-    "img": "public/img/Nft23.jpg",
+    "img": "https://i.ibb.co/2cSVtyL/Nft11.jpg",
     "name": "CosmicHero",
+    "owner": "GalacticGuard",
+    "ownerImg": "https://i.ibb.co/p1DC6Nj/model4.jpg",
     "price": 15.99,
     "numberLikes": 723,
-    "type": "All"
+    "type": "All",
+    "description": "Legendary hero NFT with cosmic powers beyond imagination. Embrace destiny and become a cosmic legend!",
+    "views": 2934
   },
   {
-    "img": "public/img/Nft24.jpg",
-    "name": "StarFighter",
-    "price": 4.99,
-    "numberLikes": 141,
-    "type": "All"
+    "img": "https://i.ibb.co/qDf3jKj/Nft12.jpg",
+    "name": "AstralGuardian",
+    "owner": "LaserLion",
+    "ownerImg": "https://i.ibb.co/d5tGMdZ/model1.jpg",
+    "price": 11.99,
+    "numberLikes": 845,
+    "type": "All",
+    "description": "Guardian NFT tasked with protecting the astral realms. Safeguard the cosmos with this celestial sentinel!",
+    "views": 2421
   },
   {
-    "img": "public/img/Nft25.jpg",
-    "name": "Dark Puppy",
-    "price": 2.99,
-    "numberLikes": 489,
-    "type": "PuppyNFT"
+    "img": "https://i.ibb.co/cg8j52X/Nft13.jpg",
+    "name": "TechWarrior",
+    "owner": "PixelPioneer",
+    "ownerImg": "https://i.ibb.co/QQBFkmt/model2.jpg",
+    "price": 7.99,
+    "numberLikes": 527,
+    "type": "All",
+    "description": "Futuristic warrior NFT equipped with advanced technology. Wage battles with this cutting-edge champion!",
+    "views": 1976
   },
   {
-    "img": "public/img/Nft26.jpg",
-    "name": "Sweet Puppy",
-    "price": 2.99,
-    "numberLikes": 189,
-    "type": "PuppyNFT"
-  },
-  {
-    "img": "public/img/Nft27.jpg",
-    "name": "Robot Puppy",
-    "price": 2.99,
-    "numberLikes": 839,
-    "type": "PuppyNFT"
-  },
-  {
-    "img": "public/img/Nft28.jpg",
-    "name": "Mad Puppy",
-    "price": 2.99,
-    "numberLikes": 666,
-    "type": "PuppyNFT"
-  },
-  {
-    "img": "public/img/Nft29.jpg",
-    "name": "Black Puppy",
-    "price": 2.99,
-    "numberLikes": 389,
-    "type": "PuppyNFT"
-  },
-  {
-    "img": "public/img/Nft30.jpg",
-    "name": "Ice Puppy",
-    "price": 2.99,
-    "numberLikes": 109,
-    "type": "PuppyNFT"
-  },
-  {
-    "img": "public/img/Nft31.jpg",
-    "name": "Banana",
-    "price": 4.99,
-    "numberLikes": 139,
-    "type": "MonkeyNFT"
-  },
-  {
-    "img": "public/img/Nft32.jpg",
-    "name": "ApeArtistry",
-    "price": 5.99,
-    "numberLikes": 989,
-    "type": "MonkeyNFT"
-  },
-  {
-    "img": "public/img/Nft33.jpg",
-    "name": "DapperApe",
-    "price": 3.99,
-    "numberLikes": 319,
-    "type": "MonkeyNFT"
-  },
-  {
-    "img": "public/img/Nft34.jpg",
-    "name": "ChimpCharmers",
-    "price": 2.99,
-    "numberLikes": 626,
-    "type": "MonkeyNFT"
-  },
-  {
-    "img": "public/img/Nft35.jpg",
-    "name": "GorillaGems",
-    "price": 8.99,
-    "numberLikes": 389,
-    "type": "MonkeyNFT"
-  },
-  {
-    "img": "public/img/Nft36.jpg",
-    "name": "BaboonBits",
-    "price": 9.99,
-    "numberLikes": 429,
-    "type": "MonkeyNFT"
+    "img": "https://i.ibb.co/pPWdbW2/Nft14.jpg",
+    "name": "NeonNinja",
+    "owner": "GalacticGuru",
+    "ownerImg": "https://i.ibb.co/p1DC6Nj/model4.jpg",
+    "price": 6.99,
+    "numberLikes": 688,
+    "type": "All",
+    "description": "Sneaky and stealthy NFT blending into the neon shadows. Strike from the darkness with this digital ninja!",
+    "views": 2189
   }
 ]

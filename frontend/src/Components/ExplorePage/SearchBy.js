@@ -1,13 +1,27 @@
-import React from "react";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/splide/dist/css/themes/splide-default.min.css";
-import styled from "styled-components";
+import React from 'react'
+import { Splide, SplideSlide } from '@splidejs/react-splide'
+import '@splidejs/splide/dist/css/themes/splide-default.min.css'
+import styled from 'styled-components'
+import { useEffect } from 'react'
 
-import { PuppyNFT } from "../Database";
-import { MonkeyNFT } from "../Database";
-import NFT from "../HomePage/NFT";
+import { useMyContext } from '../../store/nfts/main'
+import NFT from '../HomePage/NFT'
 
 function SearchBy() {
+  const { dataPuppy, dataMonkey, fetchPuppies, fetchMonkeys } = useMyContext()
+
+  useEffect(() => {
+    const fetchNftsData = async () => {
+      await fetchPuppies()
+      await fetchMonkeys()
+    }
+
+    fetchNftsData()
+  }, [])
+
+  useEffect(() => {
+    console.log(dataPuppy)
+  }, [dataPuppy])
   return (
     <SearchByStyle>
       <Header>
@@ -18,7 +32,7 @@ function SearchBy() {
       <Splide
         options={{
           perPage: 4,
-          type: "loop",
+          type: 'loop',
           pagination: false,
           keyboard: true,
           lazyLoad: true,
@@ -37,25 +51,28 @@ function SearchBy() {
           },
         }}
       >
-        {PuppyNFT.map((data) => (
-          <SplideSlide key={data.id}>
-            <NFT
-              id={data.id}
-              img={data.img}
-              ownerName={data.ownerName}
-              ownerPicture={data.ownerPicture}
-              price={data.price}
-              numberLicked={data.numberLikes}
-            />
-          </SplideSlide>
-        ))}
+        {dataPuppy &&
+          dataPuppy.map((data) => (
+            <SplideSlide key={data._id}>
+              <NFT
+                id={data._id}
+                img={data.img}
+                name={data.name}
+                ownerName={data.owner}
+                ownerPicture={data.ownerImg}
+                price={data.price}
+                numberLicked={data.numberLikes}
+                key={data._id}
+              />
+            </SplideSlide>
+          ))}
       </Splide>
 
       <SubHeader>Monkey with drip</SubHeader>
       <Splide
         options={{
           perPage: 4,
-          type: "loop",
+          type: 'loop',
           pagination: false,
           keyboard: true,
           lazyLoad: true,
@@ -74,24 +91,27 @@ function SearchBy() {
           },
         }}
       >
-        {MonkeyNFT.map((data) => (
-          <SplideSlide key={data.id}>
-            <NFT
-              id={data.id}
-              img={data.img}
-              ownerName={data.ownerName}
-              ownerPicture={data.ownerPicture}
-              price={data.price}
-              numberLicked={data.numberLikes}
-            />
-          </SplideSlide>
-        ))}
+        {dataMonkey &&
+          dataMonkey.map((data) => (
+            <SplideSlide key={data.id}>
+              <NFT
+                id={data._id}
+                img={data.img}
+                name={data.name}
+                ownerName={data.owner}
+                ownerPicture={data.ownerImg}
+                price={data.price}
+                numberLicked={data.numberLikes}
+                key={data._id}
+              />
+            </SplideSlide>
+          ))}
       </Splide>
     </SearchByStyle>
-  );
+  )
 }
 
-export default SearchBy;
+export default SearchBy
 
 const SearchByStyle = styled.div`
   .splide__slide {
@@ -99,7 +119,7 @@ const SearchByStyle = styled.div`
     justify-content: center;
     align-items: center;
   }
-`;
+`
 const Header = styled.h3`
   h1 {
     color: #fff;
@@ -121,7 +141,7 @@ const Header = styled.h3`
     text-transform: uppercase;
     margin: 0;
   }
-`;
+`
 const SubHeader = styled.h3`
   color: white;
   font-size: 2em;
@@ -129,4 +149,4 @@ const SubHeader = styled.h3`
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin: 3% 4%;
-`;
+`

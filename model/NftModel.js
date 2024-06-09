@@ -3,8 +3,6 @@ const mongoose = require('mongoose')
 const NftSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true,
-    unique: true,
     trim: true,
     maxLength: [40, 'Nft have more than 40 characters'],
   },
@@ -14,28 +12,31 @@ const NftSchema = new mongoose.Schema({
   numberLikes: {
     type: Number,
   },
+  description: {
+    type: String,
+    trim: true,
+    maxLength: [40, 'Nft have more than 80 characters'],
+  },
   img: {
     type: String,
-    require: true,
-    unique: true,
   },
   type: {
     type: String,
-    enum: ['All', 'MonkeyNFT', 'PuppyNFT', 'explore-more'],
-    default: 'user',
+    enum: ['All', 'MonkeyNFT', 'PuppyNFT', 'MonsterNFT', 'explore-more'],
+    default: 'All',
+  },
+  owner: {
+    type: String,
+  },
+  views: {
+    type: Number,
+  },
+
+  ownerImg: {
+    type: String,
   },
 })
 
 const NftModel = mongoose.model('NFT', NftSchema)
 
 module.exports = NftModel
-
-// {
-//     id: 1,
-//     img: NFTTwelve,
-//     name: "SPORT MANIAC #327",
-//     ownerName: "#CryptoKing123",
-//     ownerPicture: OwnerThree,
-//     price: "7.99$",
-//     numberLikes: 105,
-//   },

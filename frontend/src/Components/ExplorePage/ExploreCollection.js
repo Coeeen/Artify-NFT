@@ -1,12 +1,28 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import { useEffect } from 'react'
 
-import NFT from "../../Components/HomePage/NFT";
-import { ExploreNFTColection } from "../Database";
+import { ExploreNFTColection } from '../Database'
+import { useMyContext } from '../../store/nfts/main'
+import NFT from '../../Components/HomePage/NFT'
 
 //img, name, ownerName, ownerPicture, price, numberLicked
 
 function ExploreCollection() {
+  const { dataNormal, fetchNfts } = useMyContext()
+
+  useEffect(() => {
+    const fetchNftsData = async () => {
+      await fetchNfts()
+    }
+
+    fetchNftsData()
+  }, [])
+
+  useEffect(() => {
+    console.log(dataNormal)
+  }, [dataNormal])
+
   return (
     <div>
       <Header>
@@ -14,23 +30,25 @@ function ExploreCollection() {
         <h2>Top Trending NFTs</h2>
       </Header>
       <NFTContainer>
-        {ExploreNFTColection.map((data) => (
-          <NFT
-            id={data.id}
-            img={data.img}
-            ownerName={data.ownerName}
-            ownerPicture={data.ownerPicture}
-            price={data.price}
-            numberLicked={data.numberLikes}
-            key={data.id}
-          />
-        ))}
+        {dataNormal &&
+          dataNormal.map((data) => (
+            <NFT
+              id={data._id}
+              img={data.img}
+              name={data.name}
+              ownerName={data.owner}
+              ownerPicture={data.ownerImg}
+              price={data.price}
+              numberLicked={data.numberLikes}
+              key={data._id}
+            />
+          ))}
       </NFTContainer>
     </div>
-  );
+  )
 }
 
-export default ExploreCollection;
+export default ExploreCollection
 
 const Header = styled.div`
   h1 {
@@ -56,11 +74,11 @@ const Header = styled.div`
   @media (max-width: 760px) {
     margin-top: 30rem;
   }
-`;
+`
 
 const NFTContainer = styled.div`
   margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   padding: 5rem;
-`;
+`

@@ -1,21 +1,22 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { AiOutlineHeart } from "react-icons/ai";
-import { AiFillHeart } from "react-icons/ai";
-import { useState } from "react";
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import { AiOutlineHeart } from 'react-icons/ai'
+import { AiFillHeart } from 'react-icons/ai'
+import { useState } from 'react'
 
 function NFT({ id, img, name, ownerName, ownerPicture, price, numberLicked }) {
-  const [Liked, setLiked] = useState(false);
-  const [NumberOfLike, setNumberOfLike] = useState(numberLicked);
+  const [Liked, setLiked] = useState(false)
+  const [NumberOfLike, setNumberOfLike] = useState(numberLicked)
   function ToggleLicked() {
     if (Liked) {
-      setLiked(false);
-      setNumberOfLike((prevState) => prevState - 1);
+      setLiked(false)
+      setNumberOfLike((prevState) => prevState - 1)
     } else {
-      setLiked(true);
-      setNumberOfLike((prevState) => prevState + 1);
+      setLiked(true)
+      setNumberOfLike((prevState) => prevState + 1)
     }
   }
+  //     <img src={require(`../../img/Nft/${ownerPicture}`)} alt={ownerName} />
 
   return (
     <NFTStyle>
@@ -40,7 +41,7 @@ function NFT({ id, img, name, ownerName, ownerPicture, price, numberLicked }) {
         </button>
       </BottomCard>
     </NFTStyle>
-  );
+  )
 }
 
 const NFTStyle = styled.div`
@@ -55,6 +56,8 @@ const NFTStyle = styled.div`
   h2 {
     font-size: 1rem;
     font-weight: 400;
+    text-align: center;
+    color: white;
   }
 
   img {
@@ -63,7 +66,7 @@ const NFTStyle = styled.div`
     width: 320px;
     height: 300px;
   }
-`;
+`
 
 const OwnerInfo = styled.div`
   display: flex;
@@ -80,14 +83,14 @@ const OwnerInfo = styled.div`
     color: white;
     cursor: pointer;
     width: 5rem;
-    font-family: "Outfit";
+    font-family: 'Outfit';
     font-weight: 400;
     border-radius: 20px;
     border: none;
     height: 2.5rem;
     margin: 0.5rem 0rem 0rem 1.5rem;
   }
-`;
+`
 
 const DetailInfo = styled.div`
   text-align: left;
@@ -99,17 +102,17 @@ const DetailInfo = styled.div`
   }
   h4 {
     margin: 0px 0px 10px 0px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 1);
     font-weight: 400;
   }
-`;
+`
 
 const Line = styled.div`
   width: 100%;
   background-color: #181839;
   height: 5px;
   margin: 10px 0px;
-`;
+`
 
 const BottomCard = styled.div`
   margin: none;
@@ -128,7 +131,7 @@ const BottomCard = styled.div`
     width: 7rem;
     height: 3rem;
     color: white;
-    font-family: "Outfit";
+    font-family: 'Outfit';
     cursor: pointer;
     font-size: 20px;
     display: flex;
@@ -139,5 +142,5 @@ const BottomCard = styled.div`
       transform: scale(1.5);
     }
   }
-`;
-export default NFT;
+`
+export default NFT
