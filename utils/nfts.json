@@ -1,0 +1,254 @@
+[
+  {
+    "img": "public/img/Nft1.jpg",
+    "name": "SPORT MANIAC #327",
+    "price": 7.99,
+    "numberLikes": 105,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft2.jpg",
+    "name": "CUPMAN #915",
+    "price": 5.99,
+    "numberLikes": 120,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft3.jpg",
+    "name": "CLOUD BOY #105",
+    "price": 11.99,
+    "numberLikes": 473,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft4.jpg",
+    "name": "HEART SKULL #325",
+    "price": 14.99,
+    "numberLikes": 588,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft5.jpg",
+    "name": "NFT Thirteen",
+    "price": 11.99,
+    "numberLikes": 695,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft6.jpg",
+    "name": "MonkeyKing",
+    "price": 13.99,
+    "numberLikes": 115,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft7.jpg",
+    "name": "CyberNinja",
+    "price": 4.99,
+    "numberLikes": 176,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft8.jpg",
+    "name": "SpacePirate",
+    "price": 4.99,
+    "numberLikes": 334,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft9.jpg",
+    "name": "RoboWarrior",
+    "price": 7.99,
+    "numberLikes": 489,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft10.jpg",
+    "name": "JungleExplorer",
+    "price": 2.99,
+    "numberLikes": 345,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft11.jpg",
+    "name": "TechnoMage",
+    "price": 2.99,
+    "numberLikes": 223,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft12.jpg",
+    "name": "CosmicWizard",
+    "price": 1.99,
+    "numberLikes": 913,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft13.jpg",
+    "name": "LunarSorcerer",
+    "price": 1.99,
+    "numberLikes": 867,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft14.jpg",
+    "name": "GalacticKnight",
+    "price": 0.99,
+    "numberLikes": 287,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft15.jpg",
+    "name": "NeonHero",
+    "price": 4.99,
+    "numberLikes": 323,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft16.jpg",
+    "name": "LaserGuardian",
+    "price": 8.99,
+    "numberLikes": 653,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft17.jpg",
+    "name": "PixelChampion",
+    "price": 3.99,
+    "numberLikes": 543,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft18.jpg",
+    "name": "SpaceAdventurer",
+    "price": 12.99,
+    "numberLikes": 423,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft19.jpg",
+    "name": "MechaWarrior",
+    "price": 5.99,
+    "numberLikes": 123,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft20.jpg",
+    "name": "VortexHero",
+    "price": 6.99,
+    "numberLikes": 633,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft21.jpg",
+    "name": "GalaxyChampion",
+    "price": 9.99,
+    "numberLikes": 312,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft22.jpg",
+    "name": "InfinityWarrior",
+    "price": 12.99,
+    "numberLikes": 431,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft23.jpg",
+    "name": "CosmicHero",
+    "price": 15.99,
+    "numberLikes": 723,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft24.jpg",
+    "name": "StarFighter",
+    "price": 4.99,
+    "numberLikes": 141,
+    "type": "All"
+  },
+  {
+    "img": "public/img/Nft25.jpg",
+    "name": "Dark Puppy",
+    "price": 2.99,
+    "numberLikes": 489,
+    "type": "PuppyNFT"
+  },
+  {
+    "img": "public/img/Nft26.jpg",
+    "name": "Sweet Puppy",
+    "price": 2.99,
+    "numberLikes": 189,
+    "type": "PuppyNFT"
+  },
+  {
+    "img": "public/img/Nft27.jpg",
+    "name": "Robot Puppy",
+    "price": 2.99,
+    "numberLikes": 839,
+    "type": "PuppyNFT"
+  },
+  {
+    "img": "public/img/Nft28.jpg",
+    "name": "Mad Puppy",
+    "price": 2.99,
+    "numberLikes": 666,
+    "type": "PuppyNFT"
+  },
+  {
+    "img": "public/img/Nft29.jpg",
+    "name": "Black Puppy",
+    "price": 2.99,
+    "numberLikes": 389,
+    "type": "PuppyNFT"
+  },
+  {
+    "img": "public/img/Nft30.jpg",
+    "name": "Ice Puppy",
+    "price": 2.99,
+    "numberLikes": 109,
+    "type": "PuppyNFT"
+  },
+  {
+    "img": "public/img/Nft31.jpg",
+    "name": "Banana",
+    "price": 4.99,
+    "numberLikes": 139,
+    "type": "MonkeyNFT"
+  },
+  {
+    "img": "public/img/Nft32.jpg",
+    "name": "ApeArtistry",
+    "price": 5.99,
+    "numberLikes": 989,
+    "type": "MonkeyNFT"
+  },
+  {
+    "img": "public/img/Nft33.jpg",
+    "name": "DapperApe",
+    "price": 3.99,
+    "numberLikes": 319,
+    "type": "MonkeyNFT"
+  },
+  {
+    "img": "public/img/Nft34.jpg",
+    "name": "ChimpCharmers",
+    "price": 2.99,
+    "numberLikes": 626,
+    "type": "MonkeyNFT"
+  },
+  {
+    "img": "public/img/Nft35.jpg",
+    "name": "GorillaGems",
+    "price": 8.99,
+    "numberLikes": 389,
+    "type": "MonkeyNFT"
+  },
+  {
+    "img": "public/img/Nft36.jpg",
+    "name": "BaboonBits",
+    "price": 9.99,
+    "numberLikes": 429,
+    "type": "MonkeyNFT"
+  }
+]

@@ -9,9 +9,18 @@ exports.createNFT = async (req, res) => {
   }
 }
 
-exports.getNFT = async (req, res) => {
+exports.getAllNFT = async (req, res) => {
   try {
     const docs = await NFT.find()
+    res.status(200).json({ status: 'success', data: docs })
+  } catch (err) {
+    res.status(400).json({ status: 'fail', data: err })
+  }
+}
+
+exports.getNFT = async (req, res) => {
+  try {
+    const docs = await NFT.findById(req.params.id)
     res.status(200).json({ status: 'success', data: docs })
   } catch (err) {
     res.status(400).json({ status: 'fail', data: err })

@@ -19,6 +19,11 @@ const NftSchema = new mongoose.Schema({
     require: true,
     unique: true,
   },
+  type: {
+    type: String,
+    enum: ['All', 'MonkeyNFT', 'PuppyNFT', 'explore-more'],
+    default: 'user',
+  },
 })
 
 const NftModel = mongoose.model('NFT', NftSchema)
