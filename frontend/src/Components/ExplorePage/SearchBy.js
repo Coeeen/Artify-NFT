@@ -22,6 +22,7 @@ function SearchBy() {
   useEffect(() => {
     console.log(dataPuppy)
   }, [dataPuppy])
+
   return (
     <SearchByStyle>
       <Header>

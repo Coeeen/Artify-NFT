@@ -1,37 +1,38 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { AiOutlineHeart } from "react-icons/ai";
-import { AiFillHeart } from "react-icons/ai";
+import { useState } from 'react'
 
-import { PopularCollectionLeft } from "../Database";
-import AutorCollectionLeft from "../../img/creators/model3.jpg";
+import styled from 'styled-components'
+import { AiOutlineHeart } from 'react-icons/ai'
+import { AiFillHeart } from 'react-icons/ai'
 
-import { PopularCollectionRight } from "../Database";
-import AutorCollectionRight from "../../img/creators/model4.jpg";
+import { PopularCollectionLeft } from '../Database'
+import AutorCollectionLeft from '../../img/creators/model3.jpg'
+
+import { PopularCollectionRight } from '../Database'
+import AutorCollectionRight from '../../img/creators/model4.jpg'
 
 function PopularCollection() {
-  const [LikedMonsters, setLikedMonsters] = useState(false);
-  const [LikedAnimal, setLikedAnimals] = useState(false);
-  const [NumberOfLikeAnimals, setNumberOfLikeAnimals] = useState(99);
-  const [NumberOfLikeMonsters, setNumberOfLikeMonsters] = useState(124);
+  const [LikedMonsters, setLikedMonsters] = useState(false)
+  const [LikedAnimal, setLikedAnimals] = useState(false)
+  const [NumberOfLikeAnimals, setNumberOfLikeAnimals] = useState(99)
+  const [NumberOfLikeMonsters, setNumberOfLikeMonsters] = useState(124)
 
   function ToggleLickedAnimals() {
     if (LikedAnimal) {
-      setLikedAnimals(false);
-      setNumberOfLikeAnimals((prevState) => prevState - 1);
+      setLikedAnimals(false)
+      setNumberOfLikeAnimals((prevState) => prevState - 1)
     } else {
-      setLikedAnimals(true);
-      setNumberOfLikeAnimals((prevState) => prevState + 1);
+      setLikedAnimals(true)
+      setNumberOfLikeAnimals((prevState) => prevState + 1)
     }
   }
 
   function ToggleLickedMonsters() {
     if (LikedMonsters) {
-      setLikedMonsters(false);
-      setNumberOfLikeMonsters((prevState) => prevState - 1);
+      setLikedMonsters(false)
+      setNumberOfLikeMonsters((prevState) => prevState - 1)
     } else {
-      setLikedMonsters(true);
-      setNumberOfLikeMonsters((prevState) => prevState + 1);
+      setLikedMonsters(true)
+      setNumberOfLikeMonsters((prevState) => prevState + 1)
     }
   }
 
@@ -74,10 +75,10 @@ function PopularCollection() {
         </Collection>
       </PopularCollectionContainter>
     </PopularCollectionStyle>
-  );
+  )
 }
 
-export default PopularCollection;
+export default PopularCollection
 
 const PopularCollectionStyle = styled.div`
   background-color: #0d0d15;
@@ -98,13 +99,13 @@ const PopularCollectionStyle = styled.div`
     font-weight: 400;
     margin: 15px 0px;
   }
-`;
+`
 
 const PopularCollectionContainter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const Collection = styled.div`
   width: 30%;
@@ -119,7 +120,7 @@ const Collection = styled.div`
       height: 150px;
     }
   }
-`;
+`
 
 const OwnerInfo = styled.div`
   display: flex;
@@ -140,7 +141,7 @@ const OwnerInfo = styled.div`
     width: 7rem;
     height: 3rem;
     color: white;
-    font-family: "Outfit";
+    font-family: 'Outfit';
     cursor: pointer;
     font-size: 20px;
     display: flex;
@@ -153,7 +154,7 @@ const OwnerInfo = styled.div`
   @media (max-width: 1280px) {
     flex-direction: column;
   }
-`;
+`
 
 const DetailInfo = styled.div`
   text-align: left;
@@ -169,4 +170,4 @@ const DetailInfo = styled.div`
     font-weight: 700;
     margin-right: 2rem;
   }
-`;
+`

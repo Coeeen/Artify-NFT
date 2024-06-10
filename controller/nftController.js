@@ -93,6 +93,23 @@ exports.getAllMonstersNFT = async (req, res) => {
   }
 }
 
+exports.getMostPopular = async (req, res) => {
+  try {
+    const docs = await NFT.find({ type: 'All' }).sort({ views: -1 }).limit(3)
+
+    res.status(200).json({
+      status: 'success',
+      length: docs.length,
+      results: docs,
+    })
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      data: err.message,
+    })
+  }
+}
+
 exports.getNFT = async (req, res) => {
   try {
     const doc = await NFT.findById(req.params.id)

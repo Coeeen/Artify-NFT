@@ -10,6 +10,7 @@ export const NftsProvider = ({ children }) => {
   const [dataMonkey, setDataMonkey] = useState(null)
   const [dataMonsters, setDataMonsters] = useState(null)
   const [dataNft, setDataNft] = useState(null)
+  const [dataPopular, setDataPopular] = useState(null)
 
   const fetchAllNfts = async () => {
     try {
@@ -87,7 +88,7 @@ export const NftsProvider = ({ children }) => {
     }
   }
 
-  const fetchRandomNfts = async (id) => {
+  const fetchRandomNfts = async () => {
     try {
       const response = await axios.get(
         `http://localhost:4444/api/v1/nfts/random`,
@@ -95,6 +96,19 @@ export const NftsProvider = ({ children }) => {
       const responseData = response.data
       setData(responseData.results)
       console.log(data)
+    } catch (error) {
+      console.error('Błąd pobierania danych z API:', error)
+    }
+  }
+
+  const fetchMostPopularNfts = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:4444/api/v1/nfts/popular`,
+      )
+      const responseData = response.data
+      setDataPopular(responseData.results)
+      console.log(dataPopular)
     } catch (error) {
       console.error('Błąd pobierania danych z API:', error)
     }
@@ -109,12 +123,14 @@ export const NftsProvider = ({ children }) => {
         dataMonsters,
         dataNft,
         data,
+        dataPopular,
         fetchNfts,
         fetchMonkeys,
         fetchMonsters,
         fetchPuppies,
         fetchNft,
         fetchRandomNfts,
+        fetchMostPopularNfts,
       }}
     >
       {children}

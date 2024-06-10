@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { useEffect } from 'react'
 
-import { ExploreNFTColection } from '../Database'
 import { useMyContext } from '../../store/nfts/main'
 import NFT from '../../Components/HomePage/NFT'
 

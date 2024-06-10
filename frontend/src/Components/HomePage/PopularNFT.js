@@ -1,9 +1,24 @@
-import React from "react";
-import styled from "styled-components";
-import NFT from "./NFT";
-import { PopularNFTCollection } from "../Database";
+import React, { useEffect } from 'react'
+import { PopularNFTCollection } from '../Database'
+import { useMyContext } from '../../store/nfts/main'
+import styled from 'styled-components'
+import NFT from './NFT'
 
 function PopularNFT() {
+  const { dataPopular, fetchMostPopularNfts } = useMyContext()
+
+  useEffect(() => {
+    const fetchNftsData = async () => {
+      await fetchMostPopularNfts()
+    }
+
+    fetchNftsData()
+  }, [])
+
+  useEffect(() => {
+    console.log(dataPopular)
+  }, [dataPopular])
+
   return (
     <PopularNFTStyle>
       <Heading>
@@ -11,21 +26,22 @@ function PopularNFT() {
         <h3>FOR TODAY {new Date().toLocaleDateString()} </h3>
       </Heading>
       <PopularNFTContainer>
-        {PopularNFTCollection.map((el) => (
-          <NFT
-            id={el.id}
-            img={el.img}
-            name={el.name}
-            ownerName={el.ownerName}
-            ownerPicture={el.ownerPicture}
-            price={el.price}
-            numberLicked={el.numberLikes}
-            key={el.id}
-          />
-        ))}
+        {dataPopular &&
+          dataPopular.map((el) => (
+            <NFT
+              id={el._id}
+              img={el.img}
+              name={el.name}
+              ownerName={el.owner}
+              ownerPicture={el.ownerImg}
+              price={el.price}
+              numberLicked={el.numberLikes}
+              key={el._id}
+            />
+          ))}
       </PopularNFTContainer>
     </PopularNFTStyle>
-  );
+  )
 }
 
 const PopularNFTStyle = styled.div`
@@ -39,7 +55,7 @@ const PopularNFTStyle = styled.div`
     margin-bottom: 5rem;
     height: auto;
   }
-`;
+`
 
 const Heading = styled.div`
   h1 {
@@ -53,7 +69,7 @@ const Heading = styled.div`
     margin: 0px 0px 50px 0px;
     font-weight: lighter;
   }
-`;
+`
 
 const PopularNFTContainer = styled.div`
   display: flex;
@@ -62,5 +78,5 @@ const PopularNFTContainer = styled.div`
   @media (max-width: 1280px) {
     flex-direction: column;
   }
-`;
-export default PopularNFT;
+`
+export default PopularNFT
