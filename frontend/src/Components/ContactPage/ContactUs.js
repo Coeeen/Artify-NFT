@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import styled from 'styled-components'
 import Lottie from 'lottie-react'
@@ -12,6 +12,9 @@ import ContactSVG from '../../img/Svg/ContactUsAnimation.json'
 
 function ContactUs() {
   const form = useRef()
+  const [fromName, setFromName] = useState('')
+  const [toName, setToName] = useState('')
+  const [message, setMessage] = useState('')
 
   const sendEmail = (e) => {
     e.preventDefault()
@@ -25,8 +28,10 @@ function ContactUs() {
       )
       .then(
         (result) => {
-          console.log(result)
-          e.target.reset()
+          console.log(result.text)
+          setFromName('')
+          setToName('')
+          setMessage('')
         },
         (error) => {
           console.log(error.text)
@@ -40,35 +45,50 @@ function ContactUs() {
         <h1>CONTACT US</h1>
         <h2>
           Feel free to contact us any time. We will get back to you as soon as
-          we can
+          we can.
         </h2>
       </HeaderStyle>
 
       <ContactUsStyle>
         <ContactInfo>
-          <input
-            type="text"
-            placeholder="Full Name"
-            name="from_name"
-            required
-          ></input>
-          <input
-            type="text"
-            placeholder="E-mail"
-            name="to_name"
-            required
-          ></input>
-
-          <input
-            type="text"
-            placeholder="Message"
-            name="message"
-            required
-          ></input>
-          <button onClick={sendEmail}>SEND MESSAGE</button>
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              width: '100%',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <input
+              type="text"
+              placeholder="Full Name"
+              name="from_name"
+              value={fromName}
+              onChange={(e) => setFromName(e.target.value)}
+              required
+            />
+            <input
+              type="text"
+              placeholder="E-mail"
+              name="to_name"
+              value={toName}
+              onChange={(e) => setToName(e.target.value)}
+              required
+            />
+            <textarea
+              placeholder="Message"
+              name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+            />
+            <button type="submit">SEND MESSAGE</button>
+          </form>
         </ContactInfo>
         <ContactCard>
-          {' '}
           <Card>
             <Lottie
               animationData={ContactSVG}
@@ -80,7 +100,7 @@ function ContactUs() {
                 right: '0%',
                 opacity: '70%',
               }}
-            ></Lottie>
+            />
             <h1>You can reach us by...</h1>
             <ul>
               <li>
