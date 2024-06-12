@@ -110,6 +110,44 @@ exports.getMostPopular = async (req, res) => {
   }
 }
 
+exports.getAnimalPack = async (req, res) => {
+  try {
+    const docs = await NFT.find({ animalPack: true })
+      .sort({ views: -1 })
+      .limit(4)
+
+    res.status(200).json({
+      status: 'success',
+      length: docs.length,
+      results: docs,
+    })
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      data: err.message,
+    })
+  }
+}
+
+exports.getMonsterPack = async (req, res) => {
+  try {
+    const docs = await NFT.find({ monsterPack: true })
+      .sort({ views: 1 })
+      .limit(4)
+
+    res.status(200).json({
+      status: 'success',
+      length: docs.length,
+      results: docs,
+    })
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      data: err.message,
+    })
+  }
+}
+
 exports.getNFT = async (req, res) => {
   try {
     const doc = await NFT.findById(req.params.id)
@@ -117,6 +155,28 @@ exports.getNFT = async (req, res) => {
       return res.status(404).json({ status: 'fail', message: 'NFT not found' })
     }
     res.status(200).json({ status: 'success', results: doc })
+  } catch (err) {
+    res.status(400).json({ status: 'fail', results: err.message })
+  }
+}
+
+exports.updateNFT = async (req, res) => {
+  try {
+    const doc = await NFT.findByIdAndUpdate(req.params.id, req.body)
+    if (!doc) {
+      return res.status(404).json({ status: 'fail', message: 'NFT not found' })
+    }
+    res.status(200).json({ status: 'success', results: doc })
+  } catch (err) {
+    res.status(400).json({ status: 'fail', results: err.message })
+  }
+}
+
+exports.deleteNFT = async (req, res) => {
+  try {
+    await NFT.findByIdAndDelete(req.params.id)
+
+    res.status(200).json({ status: 'success' })
   } catch (err) {
     res.status(400).json({ status: 'fail', results: err.message })
   }

@@ -1,16 +1,32 @@
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useMyContext } from '../../store/nfts/main'
 
 import styled from 'styled-components'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { AiFillHeart } from 'react-icons/ai'
 
-import { PopularCollectionLeft } from '../Database'
 import AutorCollectionLeft from '../../img/creators/model3.jpg'
 
 import { PopularCollectionRight } from '../Database'
 import AutorCollectionRight from '../../img/creators/model4.jpg'
 
 function PopularCollection() {
+  const { animalPack, fetchAnimalPackNfts, monsterPack, fetchMonsterPackNfts } =
+    useMyContext()
+
+  useEffect(() => {
+    const fetchNftsData = async () => {
+      await fetchAnimalPackNfts()
+      await fetchMonsterPackNfts()
+    }
+
+    fetchNftsData()
+  }, [])
+
+  useEffect(() => {
+    console.log(animalPack, monsterPack)
+  }, [animalPack])
+
   const [LikedMonsters, setLikedMonsters] = useState(false)
   const [LikedAnimal, setLikedAnimals] = useState(false)
   const [NumberOfLikeAnimals, setNumberOfLikeAnimals] = useState(99)
@@ -42,9 +58,10 @@ function PopularCollection() {
       <h2>RECOMENDED BY USERS FOR USERS</h2>
       <PopularCollectionContainter>
         <Collection>
-          {PopularCollectionLeft.map((Picture, key) => (
-            <img src={Picture.img} alt={key} key={key}></img>
-          ))}
+          {animalPack &&
+            animalPack.map((Picture, key) => (
+              <img src={Picture.img} alt={key} key={key}></img>
+            ))}
           <OwnerInfo>
             <img src={AutorCollectionLeft} alt="Autor"></img>
             <DetailInfo>
@@ -58,9 +75,10 @@ function PopularCollection() {
           </OwnerInfo>
         </Collection>
         <Collection>
-          {PopularCollectionRight.map((Picture, key) => (
-            <img src={Picture.img} alt={key} key={key}></img>
-          ))}
+          {monsterPack &&
+            monsterPack.map((Picture, key) => (
+              <img src={Picture.img} alt={key} key={key}></img>
+            ))}
           <OwnerInfo>
             <img src={AutorCollectionRight} alt="Autor"></img>
             <DetailInfo>

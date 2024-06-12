@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
-import { AllNFT } from '../Database'
 import SimilarNFT from './SimilarNFT'
 import { useMyContext } from '../../store/nfts/main'
 import styled from 'styled-components'
@@ -12,17 +11,26 @@ function NFTBuy() {
   console.log(id, dataNft)
 
   useEffect(() => {
-    if (!dataNft && id) {
+    if (id) {
       fetchNft(id)
       fetchRandomNfts()
     }
-  }, [id, dataNft, fetchNft])
+  }, [id])
 
   // End day
   const [Like, setLike] = useState(false)
+
   const Hours = new Date().getHours()
   const Minutes = 60 - new Date().getMinutes()
   const Seconds = 60 - new Date().getSeconds()
+
+  const clickLike = () => {
+    if (!Like) {
+      setLike(true)
+    } else {
+      setLike(false)
+    }
+  }
 
   return (
     <div>
@@ -48,7 +56,7 @@ function NFTBuy() {
               <Line>&zwnj; </Line>
               <BottomCard>
                 <h1>{dataNft.price}</h1>
-                <button onClick={() => setLike(!Like)}>
+                <button onClick={clickLike}>
                   {dataNft.numberLikes}
                   {Like ? <AiFillHeart /> : <AiOutlineHeart />}
                 </button>

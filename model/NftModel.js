@@ -28,6 +28,14 @@ const NftSchema = new mongoose.Schema({
   owner: {
     type: String,
   },
+  animalPack: {
+    type: Boolean,
+    require: false,
+  },
+  monsterPack: {
+    type: Boolean,
+    require: false,
+  },
   views: {
     type: Number,
   },

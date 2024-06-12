@@ -11,13 +11,15 @@ export const NftsProvider = ({ children }) => {
   const [dataMonsters, setDataMonsters] = useState(null)
   const [dataNft, setDataNft] = useState(null)
   const [dataPopular, setDataPopular] = useState(null)
+  const [animalPack, setAnimalPack] = useState(null)
+  const [monsterPack, setMonsterPack] = useState(null)
 
   const fetchAllNfts = async () => {
     try {
       const response = await axios.get('http://localhost:4444/api/v1/nfts')
       const responseData = response.data
-      setDataNormal(responseData.results)
-      console.log(dataNormal)
+      setData(responseData.results)
+      console.log(data)
     } catch (error) {
       console.error('Błąd pobierania danych z API:', error)
     }
@@ -75,19 +77,6 @@ export const NftsProvider = ({ children }) => {
     }
   }
 
-  const fetchNft = async (id) => {
-    try {
-      const response = await axios.get(
-        `http://localhost:4444/api/v1/nfts/${id}`,
-      )
-      const responseData = response.data
-      setDataNft(responseData.results)
-      console.log(dataNft)
-    } catch (error) {
-      console.error('Błąd pobierania danych z API:', error)
-    }
-  }
-
   const fetchRandomNfts = async () => {
     try {
       const response = await axios.get(
@@ -114,6 +103,65 @@ export const NftsProvider = ({ children }) => {
     }
   }
 
+  const fetchAnimalPackNfts = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:4444/api/v1/nfts/popular/animalPack`,
+      )
+      const responseData = response.data
+      setAnimalPack(responseData.results)
+      console.log(animalPack)
+    } catch (error) {
+      console.error('Błąd pobierania danych z API:', error)
+    }
+  }
+  const fetchMonsterPackNfts = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:4444/api/v1/nfts/popular/monsterPack`,
+      )
+      const responseData = response.data
+      setMonsterPack(responseData.results)
+      console.log(monsterPack)
+    } catch (error) {
+      console.error('Błąd pobierania danych z API:', error)
+    }
+  }
+
+  const fetchNft = async (id) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:4444/api/v1/nfts/${id}`,
+      )
+      const responseData = response.data
+      setDataNft(responseData.results)
+      console.log(dataNft)
+    } catch (error) {
+      console.error('Błąd pobierania danych z API:', error)
+    }
+  }
+
+  const updateNFT = async (id) => {
+    try {
+      const response = await axios.patch(
+        `http://localhost:4444/api/v1/nfts/${id}`,
+      )
+      const responseData = response.data
+      setMonsterPack(responseData.results)
+      console.log(monsterPack)
+    } catch (error) {
+      console.error('Błąd pobierania danych z API:', error)
+    }
+  }
+
+  const deleteNFT = async (id) => {
+    try {
+      await axios.delete(`http://localhost:4444/api/v1/nfts/${id}`)
+    } catch (error) {
+      console.error('Błąd pobierania danych z API:', error)
+    }
+  }
+
   return (
     <MyContext.Provider
       value={{
@@ -123,14 +171,21 @@ export const NftsProvider = ({ children }) => {
         dataMonsters,
         dataNft,
         data,
+        animalPack,
+        monsterPack,
         dataPopular,
         fetchNfts,
+        fetchAllNfts,
         fetchMonkeys,
         fetchMonsters,
         fetchPuppies,
         fetchNft,
         fetchRandomNfts,
         fetchMostPopularNfts,
+        fetchAnimalPackNfts,
+        fetchMonsterPackNfts,
+        deleteNFT,
+        updateNFT,
       }}
     >
       {children}

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { PopularNFTCollection } from '../Database'
 import { useMyContext } from '../../store/nfts/main'
 import styled from 'styled-components'
 import NFT from './NFT'
