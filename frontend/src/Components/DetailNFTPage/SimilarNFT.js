@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import NFT from '../HomePage/NFT'
+import NFT from '../mainComponents/NFT'
 
 //id, img, name, ownerName, ownerPicture, price, numberLicked
 
@@ -64,11 +64,4 @@ const NftContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-`
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  color: #fff;
 `

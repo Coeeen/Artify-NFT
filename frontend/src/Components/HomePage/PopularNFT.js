@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useMyContext } from '../../store/nfts/main'
 import styled from 'styled-components'
-import NFT from './NFT'
+import NFT from '../mainComponents/NFT'
 
 function PopularNFT() {
   const { dataPopular, fetchMostPopularNfts } = useMyContext()

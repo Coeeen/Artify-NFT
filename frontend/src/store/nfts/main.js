@@ -141,16 +141,28 @@ export const NftsProvider = ({ children }) => {
     }
   }
 
-  const updateNFT = async (id) => {
+  const createNFT = async (data) => {
+    try {
+      const response = await axios.post(
+        `http://localhost:4444/api/v1/nfts`,
+        data,
+      )
+      console.log('Utworzone dane:', response.data)
+    } catch (error) {
+      console.error('Błąd pobierania danych z API:', error)
+    }
+  }
+
+  const updateNFT = async (id, items) => {
     try {
       const response = await axios.patch(
         `http://localhost:4444/api/v1/nfts/${id}`,
+        items,
       )
-      const responseData = response.data
-      setMonsterPack(responseData.results)
-      console.log(monsterPack)
+      console.log('Zaktualizowane dane:', response.data)
+      await fetchAllNfts()
     } catch (error) {
-      console.error('Błąd pobierania danych z API:', error)
+      console.error('Błąd aktualizacji NFT:', error)
     }
   }
 
@@ -158,7 +170,7 @@ export const NftsProvider = ({ children }) => {
     try {
       await axios.delete(`http://localhost:4444/api/v1/nfts/${id}`)
     } catch (error) {
-      console.error('Błąd pobierania danych z API:', error)
+      console.error('Błąd usuwania danych z API:', error)
     }
   }
 
@@ -186,6 +198,7 @@ export const NftsProvider = ({ children }) => {
         fetchMonsterPackNfts,
         deleteNFT,
         updateNFT,
+        createNFT,
       }}
     >
       {children}

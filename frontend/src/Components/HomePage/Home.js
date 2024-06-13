@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import Lottie from "lottie-react";
-import HomeSVG from "../../img/Svg/Home.json";
-import { AiFillHome } from "react-icons/ai";
-import { BsFillRocketTakeoffFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import React from 'react'
+import styled from 'styled-components'
+import Lottie from 'lottie-react'
+import HomeSVG from '../../img/Svg/Home.json'
+
+import ButtonJoin from '../mainComponents/ButtonJoin'
+import ButtonExplore from '../mainComponents/ButtonExplore'
 
 function Home() {
   return (
@@ -16,29 +16,18 @@ function Home() {
         </h1>
         <h3>Your Haven For Unique Digital Artwork</h3>
         <div>
-          <Link to="register">
-            <JoinUsButton>
-              <span>{<AiFillHome />} </span> JOIN US
-            </JoinUsButton>
-          </Link>
-          <Link to="explore">
-            <ExploreButton>
-              <span>
-                EXPLORE{"   "}
-                <span>{<BsFillRocketTakeoffFill />}</span>
-              </span>
-            </ExploreButton>
-          </Link>
+          <ButtonJoin />
+          <ButtonExplore />
         </div>
       </Headers>
       <LottieStyle>
         <Lottie animationData={HomeSVG} />;
       </LottieStyle>
     </MainHome>
-  );
+  )
 }
 
-export default Home;
+export default Home
 
 const MainHome = styled.div`
   display: flex;
@@ -48,7 +37,7 @@ const MainHome = styled.div`
   @media (max-width: 1280px) {
     flex-direction: column;
   }
-`;
+`
 
 const Headers = styled.div`
   display: flex;
@@ -94,7 +83,7 @@ const Headers = styled.div`
       margin: 0 0 1rem 0;
     }
   }
-`;
+`
 
 const LottieStyle = styled.div`
   flex: 1;
@@ -103,46 +92,4 @@ const LottieStyle = styled.div`
   @media (max-width: 1280px) {
     display: none;
   }
-`;
-
-const JoinUsButton = styled.button`
-  width: 10rem;
-  color: white;
-  border-radius: 20px;
-  background-color: transparent;
-  box-shadow: 0 0 5px #c486ca;
-  font-family: "Outfit";
-  font-weight: bold;
-  font-size: 1rem;
-  padding: 1.2rem;
-  cursor: pointer;
-  border: none;
-  span {
-    color: white;
-    scale: 2rem;
-  }
-  @media (max-width: 1280px) {
-    width: 5 rem;
-    padding: 1rem;
-  }
-`;
-
-const ExploreButton = styled.button`
-  width: 10rem;
-  color: black;
-  border-radius: 20px;
-  background-color: white;
-  box-shadow: 0 0 5px #fff;
-  padding: 1.2rem;
-  cursor: pointer;
-  margin-left: 8rem;
-  font-family: "Outfit";
-  font-weight: bolder;
-  border: none;
-  font-size: 1rem;
-
-  span {
-    color: black;
-    scale: 2rem;
-  }
-`;
+`

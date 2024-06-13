@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useEffect } from 'react'
 
 import { useMyContext } from '../../store/nfts/main'
-import NFT from '../../Components/HomePage/NFT'
+import NFT from '../../Components/mainComponents/NFT'
 
 //img, name, ownerName, ownerPicture, price, numberLicked
 

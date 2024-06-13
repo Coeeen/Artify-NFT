@@ -20,6 +20,7 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
+import ActiveUsersAnimation from '../mainComponents/ActiveUsersAnimation'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -51,13 +52,22 @@ const StyledIconButton = styled(IconButton)(({ theme }) => ({
   },
 }))
 
+const StyledDialog = styled(Dialog)(({ theme }) => ({
+  '& .MuiPaper-root': {
+    background: '#1B1E28',
+    color: 'white',
+  },
+}))
+
 function AdminPage() {
-  const { data, fetchAllNfts, deleteNFT, updateNFT, addNFT } = useMyContext()
-  const [open, setOpen] = useState(false)
+  const { data, fetchAllNfts, deleteNFT, updateNFT, createNFT } = useMyContext()
+  const [openEdit, setOpenEdit] = useState(false)
+  const [openCreate, setOpenCreate] = useState(false)
   const [name, setName] = useState('')
   const [price, setPrice] = useState(0)
+  const [iconUrl, setIconUrl] = useState('')
   const [description, setDescription] = useState('')
-
+  const [selectedRow, setSelectedRow] = useState()
   useEffect(() => {
     const fetchData = async () => {
       await fetchAllNfts()
@@ -65,9 +75,19 @@ function AdminPage() {
     fetchData()
   }, [])
 
-  const handleEdit = (id) => {
-    console.log('Edit', id)
-    // Implement the edit functionality
+  const handleEdit = async () => {
+    try {
+      console.log('Edit', selectedRow)
+      const items = {
+        name: name,
+        price: price,
+        description: description,
+      }
+      await updateNFT(selectedRow, items)
+      setOpenEdit(false)
+    } catch (error) {
+      console.error('Błąd edycji danych:', error)
+    }
   }
 
   const handleDelete = async (id) => {
@@ -77,27 +97,42 @@ function AdminPage() {
 
   const handleCheck = (id) => `/explore/${id}`
 
-  const handleOpenDialog = () => {
-    setOpen(true)
+  const handleOpenEditDialog = (id) => {
+    setSelectedRow(id)
+    setOpenEdit(true)
+    setOpenCreate(false)
+  }
+
+  const handleOpenCreateDialog = (id) => {
+    setSelectedRow(id)
+    setOpenCreate(true)
   }
 
   const handleCloseDialog = () => {
-    setOpen(false)
+    setOpenEdit(false)
+    setOpenCreate(false)
   }
 
-  const handleAddNFT = async () => {
-    // Add logic to add new NFT
-    await addNFT({ name, price, description })
+  const handleCreateNFT = async () => {
+    const items = {
+      name: name,
+      price: price,
+      description: description,
+      img: iconUrl,
+    }
+    await createNFT(items)
     await fetchAllNfts()
-    setOpen(false)
-    // Reset form fields
+    setOpenCreate(false)
     setName('')
     setPrice(0)
     setDescription('')
+    setIconUrl('')
   }
 
   return (
     <>
+      <ActiveUsersAnimation />
+
       <TableContainer
         style={{ borderRadius: '5px', margin: '5px 10px' }}
         component={Paper}
@@ -164,7 +199,9 @@ function AdminPage() {
                     {nft.description}
                   </TableCell>
                   <TableCell>
-                    <StyledIconButton onClick={() => handleEdit(nft._id)}>
+                    <StyledIconButton
+                      onClick={() => handleOpenEditDialog(nft._id)}
+                    >
                       <EditIcon />
                     </StyledIconButton>
                     <StyledIconButton onClick={() => handleDelete(nft._id)}>
@@ -184,50 +221,139 @@ function AdminPage() {
           margin: '25px 0',
         }}
       >
-        <Button variant="outlined" color="primary" onClick={handleOpenDialog}>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={handleOpenCreateDialog}
+        >
           Dodaj nowy NFT
         </Button>
       </div>
 
-      <Dialog open={open} onClose={handleCloseDialog}>
-        <DialogTitle>Dodaj nowy NFT</DialogTitle>
-        <DialogContent>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Nazwa"
-            fullWidth
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <TextField
-            margin="dense"
-            id="price"
-            label="Cena"
-            type="number"
-            fullWidth
-            value={price}
-            onChange={(e) => setPrice(Number(e.target.value))}
-          />
+      <StyledDialog open={openEdit} onClose={handleCloseDialog}>
+        <DialogTitle>Edycja NFT</DialogTitle>
+        <DialogContent
+          style={{ background: '#1B1E28', display: 'grid', gap: '10px' }}
+        >
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '10px',
+            }}
+          >
+            <div>
+              <label htmlFor="name">Nazwa</label>
+              <TextField
+                autoFocus
+                margin="dense"
+                id="name"
+                fullWidth
+                style={{ background: 'white' }}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="price">Cena</label>
+              <TextField
+                margin="dense"
+                id="price"
+                type="number"
+                fullWidth
+                style={{ background: 'white' }}
+                value={price}
+                onChange={(e) => setPrice(Number(e.target.value))}
+              />
+            </div>
+          </div>
+
+          <label htmlFor="description">Opis</label>
           <TextField
             margin="dense"
             id="description"
-            label="Opis"
             fullWidth
             multiline
             rows={4}
+            style={{ background: 'white' }}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseDialog}>Anuluj</Button>
-          <Button onClick={handleAddNFT} color="primary">
-            Dodaj
+          <Button onClick={handleEdit} color="primary">
+            Edytuj
           </Button>
         </DialogActions>
-      </Dialog>
+      </StyledDialog>
+
+      <StyledDialog open={openCreate} onClose={handleCloseDialog}>
+        <DialogTitle>Utworzenie nowego NFT</DialogTitle>
+        <DialogContent
+          style={{ background: '#1B1E28', display: 'grid', gap: '10px' }}
+        >
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '10px',
+            }}
+          >
+            <div>
+              <label htmlFor="name">Nazwa</label>
+              <TextField
+                autoFocus
+                margin="dense"
+                id="name"
+                fullWidth
+                style={{ background: 'white' }}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="price">Cena</label>
+              <TextField
+                margin="dense"
+                id="price"
+                type="number"
+                fullWidth
+                style={{ background: 'white' }}
+                value={price}
+                onChange={(e) => setPrice(Number(e.target.value))}
+              />
+            </div>
+          </div>
+
+          <label htmlFor="description">URL IMG</label>
+          <TextField
+            margin="dense"
+            id="description"
+            fullWidth
+            style={{ background: 'white' }}
+            value={iconUrl}
+            onChange={(e) => setIconUrl(e.target.value)}
+          />
+          <label htmlFor="description">Opis</label>
+          <TextField
+            margin="dense"
+            id="description"
+            fullWidth
+            multiline
+            rows={4}
+            style={{ background: 'white' }}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDialog}>Anuluj</Button>
+          <Button onClick={handleCreateNFT} color="primary">
+            Utwórz
+          </Button>
+        </DialogActions>
+      </StyledDialog>
     </>
   )
 }

@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import Lottie from "lottie-react";
+import React from 'react'
+import styled from 'styled-components'
+import Lottie from 'lottie-react'
 
-import { ExploreMoreData } from "../Database";
-import ExploreMoreLottie from "../../img/Svg/ExploreMore.json";
-import NFT from "./NFT";
-import { Link } from "react-router-dom";
+import { ExploreMoreData } from '../Database'
+import ExploreMoreLottie from '../../img/Svg/ExploreMore.json'
+import NFT from '../mainComponents/NFT'
+import { Link } from 'react-router-dom'
 
 function ExploreMore() {
   return (
@@ -36,10 +36,10 @@ function ExploreMore() {
         </div>
       </SearchForMoreStyle>
     </ExploreMoreStyle>
-  );
+  )
 }
 
-export default ExploreMore;
+export default ExploreMore
 
 const ExploreMoreStyle = styled.div`
   h1 {
@@ -58,7 +58,7 @@ const ExploreMoreStyle = styled.div`
     color: white;
     text-align: center;
   }
-`;
+`
 const ExploreMoreContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -81,7 +81,7 @@ const ExploreMoreContainer = styled.div`
       cursor: auto;
     }
   }
-`;
+`
 const SearchForMoreStyle = styled.div`
   display: flex;
   justify-content: center;
@@ -95,7 +95,7 @@ const SearchForMoreStyle = styled.div`
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
     padding: 1.5rem;
     cursor: pointer;
-    font-family: "Outfit";
+    font-family: 'Outfit';
     font-weight: bolder;
     font-size: 1.7rem;
     font-weight: 400;
@@ -107,4 +107,4 @@ const SearchForMoreStyle = styled.div`
     width: 25rem;
     height: 5rem;
   }
-`;
+`
