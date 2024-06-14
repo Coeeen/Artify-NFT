@@ -1,8 +1,8 @@
-import React from "react";
-import Lottie from "lottie-react";
-import styled from "styled-components";
-import LoginAnimation from "../../img/Svg/Login.json";
-import { StyledLink } from "../RegisterPage/RegisterInput";
+import React from 'react'
+import Lottie from 'lottie-react'
+import styled from 'styled-components'
+import LoginAnimation from '../../img/Svg/Login.json'
+import { StyledLink } from '../RegisterPage/RegisterInput'
 function LoginInput() {
   return (
     <LoginInputStyle>
@@ -11,7 +11,7 @@ function LoginInput() {
       <LottieStyle>
         <Lottie
           animationData={LoginAnimation}
-          style={{ height: "300px", width: "300px" }}
+          style={{ height: '300px', width: '300px' }}
         ></Lottie>
         <input type="text" placeholder="E-mail"></input>
         <input type="text" placeholder="Password"></input>
@@ -19,7 +19,7 @@ function LoginInput() {
           <p>
             <StyledLink to="/register">
               Not a member?
-              <span style={{ color: "#F44956" }}>
+              <span style={{ color: '#F44956' }}>
                 <br /> Sign Up
               </span>
             </StyledLink>
@@ -27,19 +27,21 @@ function LoginInput() {
           <p>
             <StyledLink to="/forgot">
               Forgot
-              <span style={{ color: "#507ded" }}>
+              <span style={{ color: '#507ded' }}>
                 <br></br> Password?
               </span>
             </StyledLink>
           </p>
         </Links>
-        <button>LOG IN</button>
+        <StyledLink to="/user/1">
+          <button>LOG IN</button>
+        </StyledLink>
       </LottieStyle>
     </LoginInputStyle>
-  );
+  )
 }
 
-export default LoginInput;
+export default LoginInput
 
 const LoginInputStyle = styled.div`
   margin: 1rem;
@@ -62,13 +64,13 @@ const LoginInputStyle = styled.div`
     color: white;
     text-align: center;
   }
-`;
+`
 const LottieStyle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  input[type="text"],
+  input[type='text'],
   textarea {
     width: 20%;
     padding: 12px 20px;
@@ -79,7 +81,7 @@ const LottieStyle = styled.div`
     border-bottom: 2px solid white;
     background-color: transparent;
     color: white;
-    font-family: "Outfit";
+    font-family: 'Outfit';
     &:focus {
       outline: none;
     }
@@ -89,13 +91,13 @@ const LottieStyle = styled.div`
     border: 1px solid #fff;
     background: #fff;
     box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.25);
-    font-family: "Outfit";
+    font-family: 'Outfit';
     padding: 1.5rem;
     width: 10rem;
     margin: 1rem 0rem;
     cursor: pointer;
   }
-`;
+`
 
 const Links = styled.div`
   display: flex;
@@ -107,4 +109,4 @@ const Links = styled.div`
     font-size: 0.7rem;
     justify-content: space-around;
   }
-`;
+`

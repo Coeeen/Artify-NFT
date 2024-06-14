@@ -11,6 +11,7 @@ import ForgetPasswordPage from './ForgetPasswordPage'
 import DetailNft from './DetailNft'
 import { NftsProvider } from './store/nfts/main'
 import AdminPanelPage from './AdminPanelPage'
+import UserMainPage from './UserMainPage'
 
 function ScrollToTop() {
   const location = useLocation()
@@ -37,6 +38,7 @@ function App() {
             <Route path="/forgot" element={<ForgetPasswordPage />} />
             <Route path="/explore/:id" element={<DetailNft />} />
             <Route path="/admin" element={<AdminPanelPage />} />
+            <Route path="/user/:id" element={<UserMainPage />} />
           </Routes>
         </BrowserRouter>
       </NftsProvider>

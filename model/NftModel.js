@@ -8,9 +8,11 @@ const NftSchema = new mongoose.Schema({
   },
   price: {
     type: Number,
+    default: 0,
   },
   numberLikes: {
     type: Number,
+    default: 0,
   },
   description: {
     type: String,
@@ -27,6 +29,7 @@ const NftSchema = new mongoose.Schema({
   },
   owner: {
     type: String,
+    default: 'TESTER123',
   },
   animalPack: {
     type: Boolean,
@@ -38,10 +41,12 @@ const NftSchema = new mongoose.Schema({
   },
   views: {
     type: Number,
+    default: 0,
   },
 
   ownerImg: {
     type: String,
+    default: 'https://i.ibb.co/d5tGMdZ/model1.jpg',
   },
 })
 

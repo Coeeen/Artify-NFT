@@ -160,6 +160,33 @@ exports.getNFT = async (req, res) => {
   }
 }
 
+exports.createNFT = async (req, res) => {
+  try {
+    const { name, price, description, img } = req.body
+
+    if (!name || !price || !description || !img) {
+      return res
+        .status(400)
+        .json({ status: 'fail', message: 'Missing required fields' })
+    }
+
+    const doc = await NFT.create({
+      name: name,
+      price: price,
+      description: description,
+      img: img,
+    })
+
+    if (!doc) {
+      return res.status(404).json({ status: 'fail', message: 'NFT not found' })
+    }
+
+    res.status(200).json({ status: 'success', results: doc })
+  } catch (err) {
+    res.status(400).json({ status: 'fail', results: err.message })
+  }
+}
+
 exports.updateNFT = async (req, res) => {
   try {
     const doc = await NFT.findByIdAndUpdate(req.params.id, req.body)
