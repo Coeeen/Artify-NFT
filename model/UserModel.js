@@ -1,7 +1,6 @@
-const mongoose = require('mongoose')
-const validator = require('validator')
-const bcrypt = require('bcryptjs')
-const crypto = require('crypto')
+const mongoose = require('mongoose');
+const validator = require('validator');
+const bcrypt = require('bcryptjs');
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -20,11 +19,12 @@ const UserSchema = new mongoose.Schema({
   },
   img: {
     type: String,
-    required: true,
+    required: false,
+    default:'https://i.ibb.co/d5tGMdZ/model1.jpg'
   },
   role: {
     type: String,
-    enum: ['user', 'lead', 'guide', 'admin'],
+    enum: ['user', 'admin'],
     default: 'user',
   },
   active: {
@@ -44,7 +44,7 @@ const UserSchema = new mongoose.Schema({
     minlength: [5, 'Password confirmation must have min 5 characters'],
     validate: {
       validator: function (el) {
-        return el === this.password
+        return el === this.password;
       },
       message: 'Passwords are not equal',
     },
@@ -55,8 +55,17 @@ const UserSchema = new mongoose.Schema({
       ref: 'NFT',
     },
   ],
-})
+});
 
-const UserModel = mongoose.model('User', UserSchema)
+UserSchema.pre('save', async function(next) {
+  if (!this.isModified('password')) return next();
 
-module.exports = UserModel
+  this.password = await bcrypt.hash(this.password, 12);
+
+  this.passwordConfirm = undefined;
+  next();
+});
+
+const UserModel = mongoose.model('User', UserSchema);
+
+module.exports = UserModel;

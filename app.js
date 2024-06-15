@@ -4,7 +4,12 @@ const helmet = require('helmet')
 const mongoSanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
 const rateLimit = require('express-rate-limit')
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+
+
 const nftView = require('./view/NftView')
+const userView = require('./view/UserView')
 
 const app = express()
 
@@ -34,11 +39,33 @@ app.use(xss())
 
 // app.use('/api', limiter)
 
+const swaggerOptions = {
+  swaggerDefinition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'ARTIFY API SWAGGER',
+      version: '1.0.0',
+      description: 'API for managing users',
+    },
+    servers: [
+      {
+        url: 'http://localhost:4444/', 
+      },
+    ],
+  },
+  apis: ['./view/*.js'], 
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString()
   next()
 })
 
 app.use('/api/v1/nfts', nftView)
+app.use('/api/v1/users', userView)
 
 module.exports = app
