@@ -1,10 +1,26 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Lottie from "lottie-react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import { UserContext } from '../../store/user/mainUser'
 import SignIn from "../../img/Svg/SignIn.json";
+
 function RegisterInput() {
+
+  const { getAllUsers,data } = UserContext()
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      await getAllUsers()
+    }
+
+    fetchUserData()
+  }, [])
+
+  useEffect(() => {
+    console.log(data)
+  }, [data])
+
   return (
     <LoginInputStyle>
       <h1>Sign Up!</h1>

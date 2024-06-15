@@ -10,6 +10,7 @@ import ExploreMorePage from './ExploreMorePage'
 import ForgetPasswordPage from './ForgetPasswordPage'
 import DetailNft from './DetailNft'
 import { NftsProvider } from './store/nfts/main'
+import { UserProvider } from './store/user/mainUser'
 import AdminPanelPage from './AdminPanelPage'
 import UserMainPage from './UserMainPage'
 
@@ -27,6 +28,7 @@ function App() {
   return (
     <div className="App">
       <NftsProvider>
+      <UserProvider>
         <BrowserRouter>
           <ScrollToTop />
           <Routes>
@@ -41,6 +43,7 @@ function App() {
             <Route path="/user/:id" element={<UserMainPage />} />
           </Routes>
         </BrowserRouter>
+        </UserProvider>
       </NftsProvider>
     </div>
   )
